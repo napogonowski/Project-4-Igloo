@@ -13,3 +13,8 @@ export async function getUserItems() {
   return sendRequest(BASE_URL);
   // internal server error
 }
+
+export async function getOneItem(selectedId) {
+  console.log("API page", selectedId);
+  return sendRequest(`${BASE_URL}/${selectedId}`, "GET");
+}

@@ -81,7 +81,7 @@ export default function ItemForm({}){
           <option value="true">Fridge</option>
           <option value="">Freezer </option>
         </select>
-        <input type="checkbox" name="frozen" checked={formData.frozen} onChange={_handleChangeFrozen} />
+        {/* <input type="checkbox" name="frozen" checked={formData.frozen} onChange={_handleChangeFrozen} /> */}
         {/* <label htmlFor="">Food Category</label>
         <select 
         name="category"

@@ -10,4 +10,7 @@ router.post("/", itemsController.createItem);
 // get request: /api/items (index) 
 router.get("/", itemsController.index);
 
+//get request : /api/item/:id (show )
+router.get("/:id", itemsController.show)
+
 module.exports = router;

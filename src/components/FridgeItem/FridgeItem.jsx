@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service"
-export default function FridgeItems({userItem}){
+export default function FridgeItems({userItem, setSelectedItem, selectedItem}){
+
+  function _handleSelect(itemId) {
+    setSelectedItem(itemId);
+  }
+
 
   return (
     <>
@@ -8,8 +14,12 @@ export default function FridgeItems({userItem}){
         {userItem.map(item =>(
           <div key={item._id}>
             <p>{item.name}</p>
-            <p>{item.qty}</p> d
+            <p>{item.qty}</p> 
             <p>{item.expDate}</p>
+            <Link to={`?selectedId=${item._id}`}>
+              View Details
+            </Link>
+            {/* button w/ onclick  */}
           </div>
         ))}
       </div>

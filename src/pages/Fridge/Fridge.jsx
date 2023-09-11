@@ -8,10 +8,16 @@ import "./Fridge.css"
 
 export default function Fridge({user}) {
   const [userItem, setUserItem] = useState([]);
+  const [selectedItem, setSelectedItem] = useState({
+    // name: "",
+    // qty: "",
+    // expDate: "",
+    // fridge: true,
+  });
 
   async function getUserItems({user}) {
     try{
-      const item = await itemService.getUserItems(); 
+      const item = await itemService.getUserItems(user); 
       setUserItem(item);
     } catch (error) {
       console.log("Failed to get user item: ", error)
@@ -19,7 +25,7 @@ export default function Fridge({user}) {
   }
   useEffect(() =>{
     getUserItems({user});
-  }, []); 
+  }, []);
 
   return (
     <main className="Fridge">
@@ -27,11 +33,11 @@ export default function Fridge({user}) {
         <ActionBar />
       </aside>
       {userItem.length >0 ?
-        <FridgeItem userItem={userItem}/>
+        <FridgeItem userItem={userItem} selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>
         :
         <h3>No items Yet !</h3>
       }
-      {/* <ItemDetails /> */}
+      <ItemDetails userItem={userItem} selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>
     </main>
   );
 }
