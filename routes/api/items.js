@@ -4,13 +4,17 @@ const itemsController = require("../../controllers/api/items");
 
 // All paths start with "api/items"
 
-// Post request : /api/items (creating an item)
+// Post -> /api/items (createItem)
 router.post("/", itemsController.createItem);
 
-// get request: /api/items (index) 
+// get -> /api/items (index) 
 router.get("/", itemsController.index);
 
-//get request : /api/item/:id (show )
-router.get("/:id", itemsController.show)
+//get -> /api/item/:id (show )
+router.get("/:id", itemsController.show);
+
+// Delete -> api/item/:id  (delete)
+
+router.delete('/:id', itemsController.delete);
 
 module.exports = router;

@@ -18,3 +18,7 @@ export async function getOneItem(selectedId) {
   console.log("API page", selectedId);
   return sendRequest(`${BASE_URL}/${selectedId}`, "GET");
 }
+
+export async function deleteItem(selectedId) {
+  return sendRequest(`${BASE_URL}/${selectedId}`, "DELETE");
+}

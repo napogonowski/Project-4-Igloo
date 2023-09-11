@@ -1,7 +1,7 @@
 import { useLocation, useSearchParams } from "react-router-dom";
 import * as itemService from "../../utilities/items-service"
 import { useEffect } from "react";
-export default function ItemDetails({selectedItem, setSelectedItem}) {
+export default function ItemDetails({selectedItem, setSelectedItem, userItem, setUserItem}) {
   const { search, hash } = useLocation();
   const [searchParams] = useSearchParams();
 
@@ -16,12 +16,18 @@ export default function ItemDetails({selectedItem, setSelectedItem}) {
     }
   } 
     useEffect(() => {
-      getOneItem(selectedId)
-      console.log("New console.log", selectedItem);
+      getOneItem(selectedId);
+      // console.log("New console.log", selectedItem);
     }, [selectedId])
  
 
-  console.log({ selectedId });
+  async function _handleDelete(selectedId) {
+    const newItemList = await itemService.deleteItem(selectedId);
+    
+    // const newItemList = userItem.filter((item) => item._id !== selectedId  )
+    setUserItem(newItemList); 
+  
+  }
 
   
   return(
@@ -45,7 +51,8 @@ export default function ItemDetails({selectedItem, setSelectedItem}) {
         </table>
         <div className="btn">
           <button>edit</button>
-          <button>remove</button>
+          <br />
+          <button onClick={() => _handleDelete(selectedId)}>remove</button>
         </div>
       </div>
     </>

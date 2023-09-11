@@ -5,7 +5,23 @@ module.exports = {
   createItem,
   index,
   show,
+  delete: deleteItem
 };
+
+
+async function deleteItem (req, res) {
+  try{
+    const item = await Item.findById(req.params.id);
+    await item.deleteOne(); 
+    const newItemsList = await Item.find({ user: req.user._id });
+    res.json(newItemsList);
+
+  } catch (error){
+    console.log("error", error);
+  }
+
+
+}
 
 async function show(req, res) {
   try {

@@ -37,7 +37,7 @@ export default function Fridge({user}) {
         :
         <h3>No items Yet !</h3>
       }
-      <ItemDetails userItem={userItem} selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>
+      <ItemDetails userItem={userItem} setUserItem={setUserItem} selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>
     </main>
   );
 }

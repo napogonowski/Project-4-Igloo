@@ -26,3 +26,8 @@ export async function getOneItem(selectedId) {
   console.log("Item-Service page", res);
   return res;
 }
+
+export async function deleteItem(selectedId) {
+  const res = await itemsAPI.deleteItem(selectedId);
+  return res;
+}
