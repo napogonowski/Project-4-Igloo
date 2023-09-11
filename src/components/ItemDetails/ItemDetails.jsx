@@ -1,10 +1,11 @@
 import { useLocation, useSearchParams } from "react-router-dom";
-import * as itemService from "../../utilities/items-service"
 import { useEffect } from "react";
-export default function ItemDetails({selectedItem, setSelectedItem, userItem, setUserItem}) {
-  const { search, hash } = useLocation();
-  const [searchParams] = useSearchParams();
+import { useNavigate } from "react-router-dom";
+import * as itemService from "../../utilities/items-service"
 
+export default function ItemDetails({selectedItem, setSelectedItem, userItem, setUserItem}) {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate(); 
   const selectedId = searchParams.get('selectedId');
 
   async function getOneItem(selectedId){
@@ -17,19 +18,16 @@ export default function ItemDetails({selectedItem, setSelectedItem, userItem, se
   } 
     useEffect(() => {
       getOneItem(selectedId);
-      // console.log("New console.log", selectedItem);
-    }, [selectedId])
- 
+    }, [selectedId]);
 
   async function _handleDelete(selectedId) {
     const newItemList = await itemService.deleteItem(selectedId);
-    
-    // const newItemList = userItem.filter((item) => item._id !== selectedId  )
     setUserItem(newItemList); 
+    navigate("/fridge");
+    setSelectedItem({});
   
   }
 
-  
   return(
     <>
       <div>
@@ -52,10 +50,11 @@ export default function ItemDetails({selectedItem, setSelectedItem, userItem, se
         <div className="btn">
           <button>edit</button>
           <br />
-          <button onClick={() => _handleDelete(selectedId)}>remove</button>
+            <button onClick={() => _handleDelete(selectedId)}>DELETE</button>
+        
         </div>
       </div>
     </>
-   );
+  );
 
 }

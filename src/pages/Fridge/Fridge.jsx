@@ -8,12 +8,7 @@ import "./Fridge.css"
 
 export default function Fridge({user}) {
   const [userItem, setUserItem] = useState([]);
-  const [selectedItem, setSelectedItem] = useState({
-    // name: "",
-    // qty: "",
-    // expDate: "",
-    // fridge: true,
-  });
+  const [selectedItem, setSelectedItem] = useState({});
 
   async function getUserItems({user}) {
     try{
