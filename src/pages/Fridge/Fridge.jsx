@@ -1,6 +1,7 @@
 import FridgeItem from "../../components/FridgeItem/FridgeItem";
 import { useState, useEffect } from "react";
 import * as userService from '../../utilities/users-service';
+import * as itemService from '../../utilities/items-service';
 import ActionBar from "../../components/ActionBar/ActionBar";
 import ItemDetails from "../../components/ItemDetails/ItemDetails";
 import "./Fridge.css"
@@ -10,14 +11,14 @@ export default function Fridge({user}) {
 
   async function getUserItems({user}) {
     try{
-      const item = await userService.getUserItems(); 
+      const item = await itemService.getUserItems(); 
       setUserItem(item);
     } catch (error) {
       console.log("Failed to get user item: ", error)
     }
   }
   useEffect(() =>{
-    getUserItems();
+    getUserItems({user});
   }, []); 
 
   return (
@@ -26,14 +27,11 @@ export default function Fridge({user}) {
         <ActionBar />
       </aside>
       {userItem.length >0 ?
-        <FridgeItem user={user}/>
+        <FridgeItem userItem={userItem}/>
         :
         <h3>No items Yet !</h3>
       }
-      <ItemDetails />
+      {/* <ItemDetails /> */}
     </main>
-
-     
-    
   );
 }

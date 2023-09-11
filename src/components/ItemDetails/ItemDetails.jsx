@@ -23,7 +23,6 @@ export default function ItemDetails() {
           <button>edit</button>
           <button>remove</button>
         </div>
-
       </div>
     </>
    );

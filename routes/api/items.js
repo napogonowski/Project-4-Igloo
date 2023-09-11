@@ -7,4 +7,7 @@ const itemsController = require("../../controllers/api/items");
 // Post request : /api/items (creating an item)
 router.post("/", itemsController.createItem);
 
+// get request: /api/items (index) 
+router.get("/", itemsController.index);
+
 module.exports = router;

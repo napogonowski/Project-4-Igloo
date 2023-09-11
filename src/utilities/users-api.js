@@ -13,6 +13,3 @@ export async function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
 
-export async function getUserItems() {
-  return sendRequest(`${BASE_URL}/items`);
-}
