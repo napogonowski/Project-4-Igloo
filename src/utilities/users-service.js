@@ -46,3 +46,13 @@ export function getUser() {
   const token = getToken();
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
+
+export async function getUserItems() {
+  try {
+    const res = await usersAPI.getUserItems();
+    console.log("User-Service.js", res);
+    return res;
+  } catch (error) {
+    throw new Error("No Items found");
+  }
+}
