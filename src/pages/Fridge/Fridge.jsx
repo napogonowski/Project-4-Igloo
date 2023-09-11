@@ -27,11 +27,16 @@ export default function Fridge({user}) {
       <aside>
         <ActionBar />
       </aside>
+      <div className="flex flex-wrap">
       {userItem.length >0 ?
-        <FridgeItem userItem={userItem} selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>
+        <div>
+         <FridgeItem userItem={userItem} selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>
+         </div>
         :
         <h3>No items Yet !</h3>
       }
+
+      </div>
       <ItemDetails userItem={userItem} setUserItem={setUserItem} selectedItem={selectedItem} setSelectedItem={setSelectedItem}/>
     </main>
   );

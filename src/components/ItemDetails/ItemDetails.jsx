@@ -56,7 +56,7 @@ export default function ItemDetails({selectedItem, setSelectedItem, userItem, se
     <>
     {isEditing ? (
       <div className="m-5 p-10">
-        <h1>{selectedItem.name}</h1>
+        <h3>{selectedItem.name}</h3>
         <Table>
           <TableBody>
             <TableRow>
