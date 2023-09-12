@@ -15,9 +15,10 @@ async function update(req, res) {
     const itemId = req.params.id;
 
     // console.log("controller function log 2 ", itemId)
-    const updatedItem = await Item.findByIdAndUpdate(itemId, req.body);
-    console.log("controller function log 3", updatedItem)
-    updatedItem.save();
+    const updatedItem = await Item.findByIdAndUpdate(itemId, req.body, {
+      new: true,
+    });
+    console.log("controller function log 3", updatedItem);
     res.json(updatedItem);
   } catch (error) {
     res.status(400).json(error);
