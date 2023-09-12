@@ -13,8 +13,10 @@ router.get("/", itemsController.index);
 //get -> /api/item/:id (show )
 router.get("/:id", itemsController.show);
 
-// Delete -> api/item/:id  (delete)
+//put -> /api/item/:id (put)
+router.put("/:id", itemsController.update)
 
+// Delete -> api/item/:id  (delete)
 router.delete('/:id', itemsController.delete);
 
 module.exports = router;

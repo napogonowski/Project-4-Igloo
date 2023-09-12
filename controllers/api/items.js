@@ -5,22 +5,34 @@ module.exports = {
   createItem,
   index,
   show,
-  delete: deleteItem
+  delete: deleteItem,
+  update,
 };
 
+async function update(req, res) {
+  // console.log("controller function log 1 ", req.body)
+  try {
+    const itemId = req.params.id;
 
-async function deleteItem (req, res) {
-  try{
+    // console.log("controller function log 2 ", itemId)
+    const updatedItem = await Item.findByIdAndUpdate(itemId, req.body);
+    console.log("controller function log 3", updatedItem)
+    updatedItem.save();
+    res.json(updatedItem);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+}
+
+async function deleteItem(req, res) {
+  try {
     const item = await Item.findById(req.params.id);
-    await item.deleteOne(); 
+    await item.deleteOne();
     const newItemsList = await Item.find({ user: req.user._id });
     res.json(newItemsList);
-
-  } catch (error){
-    console.log("error", error);
+  } catch (error) {
+    res.status(400).json(error);
   }
-
-
 }
 
 async function show(req, res) {
@@ -28,7 +40,7 @@ async function show(req, res) {
     const item = await Item.findById(req.params.id);
     res.json(item);
   } catch (error) {
-    console.log("error", error);
+    res.status(400).json(error);
   }
 }
 
@@ -37,7 +49,7 @@ async function index(req, res) {
     const items = await Item.find({ user: req.user._id });
     res.json(items);
   } catch (error) {
-    console.log("controller function", error);
+    res.status(400).json(error);
   }
 }
 
