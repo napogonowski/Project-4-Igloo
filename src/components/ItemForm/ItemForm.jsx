@@ -1,6 +1,6 @@
 import { useState } from "react"
 import * as itemsService from "../../utilities/items-service"
-import moment from "react-moment"; 
+import { parseISO } from "date-fns";
 import { DatePicker } from "../ui/date-picker";
 
 export default function ItemForm({}){
@@ -8,8 +8,7 @@ export default function ItemForm({}){
     name: "",
     qty: "",
     expDate: "",
-    fridge: true,
-    // category: "", 
+    fridge: true, 
   })
 
   async function _handleSubmit(e){
@@ -30,9 +29,13 @@ export default function ItemForm({}){
     setFormData(newFormData); 
   }
   function _handleDateChange(date) {
-    // console.log({ e })
-    // const newDate = moment(date).format("YYYY-MM-DD");
-    setFormData({...formData, expDate:date})
+    // check for valid  date object
+    if (date instanceof Date && !isNaN(date)){
+      const isoDate = date.toISOString();
+      setFormData({...formData, expDate:isoDate})
+    } else {
+      console.log("invalid date", date)
+    } 
   }
 
   function _handleChangeFrozen(e){
@@ -61,14 +64,10 @@ export default function ItemForm({}){
         type="number"
         />
         <label htmlFor="">Expiry Date</label>
-        {/* <input 
-        name="expDate"
-        value={formData.expDate.toISOString()}
-        onChange={_handleChange}
-        type="date" /> */}
+      
 
         <DatePicker 
-          date={formData.expDate}
+          date={formData.expDate ? parseISO(formData.expDate): null}
           onChange={(date) => _handleDateChange(date)}
         />
 
@@ -81,19 +80,7 @@ export default function ItemForm({}){
           <option value="true">Fridge</option>
           <option value="">Freezer </option>
         </select>
-        {/* <input type="checkbox" name="frozen" checked={formData.frozen} onChange={_handleChangeFrozen} /> */}
-        {/* <label htmlFor="">Food Category</label>
-        <select 
-        name="category"
-        value={formData.category}
-        onChange={_handleChange}
-        >
-          <option value="fruit">fruit</option>
-          <option value="Veg">Veg</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Meat">Meat</option>
-          <option value="Eggs">Eggs</option>
-        </select> */}
+      
         <button type="submit">Submit</button>
       </form>
     </>
