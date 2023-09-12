@@ -13,7 +13,6 @@ export default function EditItemForm({ selectedItem, onSaved }) {
   });
 
   useEffect(() => {
-    // console.log("edit use effect log ", selectedItem)
     if (selectedItem) {
       setEditItem({
         _id: selectedItem._id,

@@ -37,11 +37,11 @@ export default function LoginForm({ setUser }) {
         <Card className="mx-auto flex w-full flex-col justify-center space-y-6 w-1/3 sm:w-[500px] sm:h-[550px]">
           <CardHeader>
             <CardTitle className="scroll-m-20 text-4xl font-bold tracking-wide lg:text-6xl mb-5">
-              Login{" "}
+              Login
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className=" items-center gap-4">
+          <div className=" items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label className=" mb-3 ml-3 text-left scroll-m-20 text-xl font-semibold tracking-tight">
                   Email:

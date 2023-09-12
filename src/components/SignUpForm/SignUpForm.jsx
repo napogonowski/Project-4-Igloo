@@ -46,7 +46,7 @@ export default class SignUpForm extends Component {
           <Card className="mx-auto flex w-full flex-col justify-center space-y-6 w-1/3 sm:w-[550px] sm:h-[740px]">
             <CardHeader>
               <CardTitle className="text-5xl font-bold tracking-wide lg:text-6xl">
-                Sign Up{" "}
+                Sign Up
               </CardTitle>
             </CardHeader>
             <CardContent>

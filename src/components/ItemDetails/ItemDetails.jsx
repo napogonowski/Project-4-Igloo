@@ -4,27 +4,10 @@ import { useNavigate } from "react-router-dom";
 import EditItemForm from "../EditItemForm/EditItemForm";
 import * as itemService from "../../utilities/items-service";
 import { Button } from "../ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "../ui/table";
 
-export default function ItemDetails({ userItem, setUserItem }) {
+import { Table, TableBody, TableCell, TableHead, TableRow } from "../ui/table";
+
+export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const selectedId = searchParams.get("selectedId");
@@ -91,30 +74,21 @@ export default function ItemDetails({ userItem, setUserItem }) {
                 <TableCell>{selectedItem.qty}</TableCell>
               </TableRow>
               <TableRow>
-                <TableHead>Expiry Date:</TableHead>
-                <TableCell>{selectedItem.expDate}</TableCell>
+                <TableHead>Expiring In:</TableHead>
+                <TableCell>
+                  {/* {selectedItem
+                    ? new Date(selectedItem.expDate).toDateString()
+                    : ""} */}
+                    {goingToExpire(selectedItem.expDate)} Days
+                </TableCell>
               </TableRow>
-              <TableRow></TableRow>
             </TableBody>
             <Button onClick={toggleEdit} className="m-5">
-              edit
+              EDIT
             </Button>
             <Button onClick={() => _handleDelete(selectedId)}>DELETE</Button>
           </Table>
         </div>
-        // <Card>
-        //   <CardTitle>Placeholder Form</CardTitle>
-        //   <form action="">
-        //     <Label>Name</Label>
-        //     <Input></Input>
-        //     <Label>Quantity</Label>
-        //     <Input></Input>
-        //     <CardFooter>
-        //       <Button onClick={toggleEdit} >Save</Button>
-        //       {/* on click should reset isediting to false  */}
-        //     </CardFooter>
-        //   </form>
-        // </Card>
       )}
     </>
   );

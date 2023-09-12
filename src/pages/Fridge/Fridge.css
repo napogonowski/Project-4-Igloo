@@ -9,7 +9,6 @@
 
 .Fridge aside {
   display: flex;
-  background-color: aquamarine;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

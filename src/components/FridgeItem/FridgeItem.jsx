@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-import * as userService from "../../utilities/users-service";
-export default function FridgeItems({ userItems }) {
+export default function FridgeItems({ userItems, goingToExpire }) {
   return (
     <>
       <div className=" mt-10">
@@ -27,13 +19,22 @@ export default function FridgeItems({ userItems }) {
                 <span className="text-base font-bold">Quantity: </span>
                 <span className="text-xl">{item.qty}</span>
               </p>
-              <p className="text-base font-bold">
-                Expires on:
-                <br />
-                <span className="text-xl">
+              <p className="text-base font-bold">Expires on: </p>
+              <div
+                className=" m-10 rounded-3xl "
+                style={{
+                  backgroundColor:
+                    goingToExpire(item.expDate) > 3
+                      ? "rgba(90, 222, 15, 0.6)"
+                      : goingToExpire(item.expDate) > 0
+                      ? "rgba(255, 195, 0, 0.81)"
+                      : "rgba(255, 0, 0, 0.81)",
+                }}
+              >
+                <p className="text-xl">
                   {new Date(item.expDate).toDateString()}
-                </span>
-              </p>
+                </p>
+              </div>
             </CardContent>
             <Button className="mb-5">
               <Link to={`?selectedId=${item._id}`}>View Details</Link>
