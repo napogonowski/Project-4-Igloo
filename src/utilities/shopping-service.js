@@ -9,3 +9,13 @@ export async function createItem(selectedItem) {
     console.log("shopping service", error);
   }
 }
+
+export async function getUserShoppingItems() {
+  try {
+    const res = await shoppingAPI.getUserShoppingItems();
+    console.log("S-service", res)
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+}

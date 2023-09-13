@@ -16,9 +16,15 @@ export default function App() {
         <>
           <Routes>
             {/* Route components in here */}
-            <Route path="/fridge" element={<Fridge user={user} setUser={setUser} />} />
+            <Route
+              path="/fridge"
+              element={<Fridge user={user} setUser={setUser} />}
+            />
             <Route path="/fridge/new" element={<AddItemPage user={user} />} />
-            <Route path="/shoppinglist" element={<ShoppingListPage user={user} />} />
+            <Route
+              path="/shoppinglist"
+              element={<ShoppingListPage user={user} />}
+            />
             <Route path="/*" element={<Navigate to="/fridge" />} />
           </Routes>
         </>

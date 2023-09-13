@@ -1,12 +1,11 @@
-import { useLocation, useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import EditItemForm from "../EditItemForm/EditItemForm";
 import * as itemService from "../../utilities/items-service";
 import * as shoppingService from "../../utilities/shopping-service";
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
-
 import { Table, TableBody, TableCell, TableHead, TableRow } from "../ui/table";
+import EditItemForm from "../EditItemForm/EditItemForm";
 
 export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
   const [searchParams] = useSearchParams();
@@ -38,10 +37,6 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
     navigate("/fridge");
   }
 
-  async function _handleNewShoppingItem(selectedItem) {
-    const newShoppingItem = await shoppingService.createItem(selectedItem);
-  }
-
   function toggleEdit() {
     setIsEditing(!isEditing);
   }
@@ -61,6 +56,9 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
       return prevUserItem;
     });
     toggleEdit();
+  }
+  async function _handleItemTransfer(selectedItem) {
+    const newShoppingItem = await shoppingService.createItem(selectedItem);
   }
 
   return (
@@ -91,7 +89,7 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
             <Button onClick={toggleEdit} className="m-5">
               EDIT
             </Button>
-            <Button onClick={() => _handleNewShoppingItem(selectedItem)}>
+            <Button onClick={() => _handleItemTransfer(selectedItem)}>
               Add To Shopping List{" "}
             </Button>
             <Button onClick={() => _handleDelete(selectedId)}>DELETE</Button>

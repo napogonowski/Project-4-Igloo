@@ -46,17 +46,9 @@ const initialItem = {
 };
 
 export default function AddItemPage({ user }) {
-  // const [formCount, setFormCount] = useState(1);
   const [formData, setFormData] = useState([]);
   const [formFieldCount, setFormFieldCount] = useState(1);
 
-  // const renderForms = () => {
-  //   const forms = [];
-  //   for (let i = 0; i < formCount; i++) {
-  //     forms.push(<ItemForm key={i} />);
-  //   }
-  //   return forms;
-  // };
   async function _handleSubmit(e) {
     e.preventDefault();
     try {
@@ -70,18 +62,7 @@ export default function AddItemPage({ user }) {
 
   return (
     <>
-      {/* <div className="grid-cols-3">
-        <Button onClick={() => setFormCount(formCount + 1)}>
-          Add another item
-        </Button>
-        <div className="col-start-2">{renderForms()}</div>
-        <div>
-          <Link to="/fridge">
-            <Button>Home</Button>
-          </Link>
-        </div>
-      </div> */}
-
+  
       <div className="grid-cols-3">
         <Button onClick={() => setFormFieldCount(formFieldCount + 1)}>
           Add another item

@@ -45,27 +45,24 @@ export default function Fridge({ user, setUser }) {
   }
 
   return (
-    <main className="Fridge">
-      <aside>
+    <main className="grid grid-cols-7  	gap-4">
+      <aside className="bg-red-500 col-start-1  col-span-2 row-span-3 rounded-2xl">
         <SideBar user={user} setUser={setUser} />
       </aside>
-      {/* <div className="flex flex-wrap bg-slate-700 auto-rows-auto "> */}
-      <div className="row row-cols-auto justify-content-evenly ">
-        <div className="col">
-          <div>
-            {userItems.length > 0 ? (
-              <FridgeItem goingToExpire={goingToExpire} userItems={userItems} />
-            ) : (
-              <h3>No items Yet !</h3>
-            )}
-          </div>
-        </div>
+      <div className=" bg-blue-500 col-start-3 col-span-3">
+        {userItems.length > 0 ? (
+          <FridgeItem goingToExpire={goingToExpire} userItems={userItems} />
+        ) : (
+          <h3 className="">No items Yet !</h3>
+        )}
       </div>
-      <ItemDetails
-        goingToExpire={goingToExpire}
-        userItem={userItems}
-        setUserItem={setUserItems}
-      />
+      <div className="bg-green-500 col-start-6 col-span-2 grid">
+        <ItemDetails
+          goingToExpire={goingToExpire}
+          userItem={userItems}
+          setUserItem={setUserItems}
+        />
+      </div>
     </main>
   );
 }

@@ -11,31 +11,11 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
 
 export default function ItemForm({ formData, onChange, indexGlobal }) {
-  // console.log(formData);
-
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   qty: "",
-  //   expDate: "",
-  //   fridge: true,
-  // });
-
-  // async function _handleSubmit(e) {
-  //   e.preventDefault();
-  //   try {
-  //     console.log("Item form JSX Page ", formData);
-  //     const newItem = await itemsService.createItem(formData);
-  //   } catch (error) {
-  //     console.log("Error creating Item (JSX FORM PAGE)", e);
-  //   }
-  // }
-
   function _handleChange(e) {
     const { name, value } = e.target;
     onChange({ ...formData, [name]: value });
@@ -88,7 +68,6 @@ export default function ItemForm({ formData, onChange, indexGlobal }) {
             <DatePicker
               className="p-5 mb-3"
               date={formData.expDate ? parseISO(formData.expDate) : null}
-              // onChange={(date, e) => _handleDateChange(date, e,  indexGlobal)}
               onChange={(date) => _handleDateChange(date, indexGlobal)}
             />
           </div>
