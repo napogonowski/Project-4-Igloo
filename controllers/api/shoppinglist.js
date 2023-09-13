@@ -1,4 +1,4 @@
-const ShoppingList = require("../../models/shoppingList");
+const ShoppingList = require("../../models/ShoppingListItem");
 
 module.exports = {
   createItem,

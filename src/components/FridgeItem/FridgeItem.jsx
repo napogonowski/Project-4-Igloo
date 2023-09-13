@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 export default function FridgeItems({ userItems, goingToExpire }) {
   return (
     <>
-      <div className=" mt-10">
+      <div className="mt-10 grid grid-cols-3 gap-5">
         {userItems.map((item) => (
           <Card key={item._id} className="rounded-3xl border-4 border-cyan-400">
             <CardHeader>

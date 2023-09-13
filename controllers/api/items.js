@@ -55,18 +55,13 @@ async function index(req, res) {
 
 async function createItem(req, res) {
   try {
-    const { name, qty, expDate, fridge } = req.body.formData;
+    const items = req.body.formData;
     console.log("recieved POST request with data", req.body);
-    const newItem = await Item.create({
-      name: name,
-      qty: qty,
-      expDate: expDate,
-      fridge: fridge,
-      // category: category,
-      user: req.user._id,
-    });
-    console.log("new item ", newItem);
-    res.json(newItem);
+    const newItems = await Item.create(
+      items.map((item) => ({ ...item, user: req.user._id }))
+    );
+    console.log("new item ", newItems);
+    res.json(newItems);
   } catch (error) {
     res.status(400).json(error);
   }

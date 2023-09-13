@@ -97,7 +97,7 @@ export default function SideBar({ user, setUser }) {
               Freezer
             </Button>
           </div>
-          <Link to="shoppinglist">
+          <Link to="/shoppinglist">
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -37,16 +37,17 @@ import {
 //     </>
 //   );
 // }
+
+const initialItem = {
+  name: "",
+  qty: "",
+  expDate: "",
+  fridge: true,
+};
+
 export default function AddItemPage({ user }) {
   // const [formCount, setFormCount] = useState(1);
-  const [formData, setFormData] = useState([
-    {
-      name: "",
-      qty: "",
-      expDate: "",
-      fridge: true,
-    },
-  ]);
+  const [formData, setFormData] = useState([]);
   const [formFieldCount, setFormFieldCount] = useState(1);
 
   // const renderForms = () => {
@@ -66,20 +67,6 @@ export default function AddItemPage({ user }) {
       console.log("Error creating Item (JSX FORM PAGE)", e);
     }
   }
-  const renderFormFields = () => {
-    const formsFields = [];
-    for (let i = 0; i < formFieldCount; i++) {
-      formsFields.push(
-        <ItemForm
-          formData={formData}
-          setFormData={setFormData}
-          key={i}
-          indexGlobal={i}
-        />
-      );
-    }
-    return formsFields;
-  };
 
   return (
     <>
@@ -106,7 +93,24 @@ export default function AddItemPage({ user }) {
                 Add New Item
               </CardTitle>
             </CardHeader>
-            <div className="col-start-2">{renderFormFields()}</div>
+            <div className="col-start-2">
+              {Array.from({ length: formFieldCount }).map((_, i) => (
+                <ItemForm
+                  key={i}
+                  indexGlobal={i}
+                  formData={formData[i] || initialItem}
+                  onChange={(data) => {
+                    setFormData((prevFormData) => {
+                      return [
+                        ...prevFormData.slice(0, i),
+                        data,
+                        ...prevFormData.slice(i + 1),
+                      ];
+                    });
+                  }}
+                />
+              ))}
+            </div>
           </Card>
           <Button
             className=" m-5  text-xl tracking-wider font-bold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-4 hover:scale-110 hover:bg-orange-500 duration-300 "

@@ -8,8 +8,8 @@ export default function ShoppingSideBar({ user, setUser }) {
   }
   return (
     <div className="">
-      <div className="space-y-4 py-4 ">
-        <div className="px-3 py-2 ">
+      <div className="space-y-4 py-4  ">
+        <div className="px-3 py-2  ">
           <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-10">
             IGLOO
           </h2>
@@ -24,8 +24,8 @@ export default function ShoppingSideBar({ user, setUser }) {
             Actions
           </h2>
           <div className="space-y-1">
-            <Link to="/fridge/new">
-              <Button variant="ghost" className="w-full justify-start">
+            {/* <Link to="/fridge/new"> */}
+            {/* <Button variant="ghost" className="w-full justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -43,8 +43,8 @@ export default function ShoppingSideBar({ user, setUser }) {
                   <path d="M12 18H3" />
                 </svg>
                 Add Item
-              </Button>
-            </Link>
+              </Button> */}
+            {/* </Link>
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,25 +60,26 @@ export default function ShoppingSideBar({ user, setUser }) {
                 <path d="M12 18V2l7 4" />
               </svg>
               All Items
-            </Button>
-
-            <Button variant="ghost" className="w-full justify-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mr-2 h-4 w-4"
-              >
-                <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
-                <circle cx="17" cy="7" r="5" />
-              </svg>
-              Fridge
-            </Button>
-            <Button variant="ghost" className="w-full justify-start">
+            </Button> */}
+            <Link to="/fridge">
+              <Button className="w-full justify-start text-xl mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mr-2 h-4 w-4"
+                >
+                  <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
+                  <circle cx="17" cy="7" r="5" />
+                </svg>
+                Fridge
+              </Button>
+            </Link>
+            {/* <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -95,9 +96,9 @@ export default function ShoppingSideBar({ user, setUser }) {
                 <path d="M4 4v16" />
               </svg>
               Freezer
-            </Button>
+            </Button> */}
           </div>
-          <Button variant="ghost" className="w-full justify-start">
+          {/* <Button variant="ghost" className="w-full justify-start">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -114,11 +115,10 @@ export default function ShoppingSideBar({ user, setUser }) {
               <path d="M4 4v16" />
             </svg>
             Shopping List
-          </Button>
+          </Button> */}
           <Button
             onClick={handleLogOut}
-            variant="ghost"
-            className="w-full justify-start"
+            className="w-full justify-start text-xl "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
