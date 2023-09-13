@@ -1,4 +1,3 @@
-const { ObjectId } = require("mongodb");
 const Item = require("../../models/item");
 
 module.exports = {

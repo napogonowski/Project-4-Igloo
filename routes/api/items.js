@@ -4,19 +4,19 @@ const itemsController = require("../../controllers/api/items");
 
 // All paths start with "api/items"
 
-// Post -> /api/items (createItem)
+// Post request -> /api/items (createItem)
 router.post("/", itemsController.createItem);
 
-// get -> /api/items (index) 
+// get request -> /api/items (index)
 router.get("/", itemsController.index);
 
-//get -> /api/item/:id (show )
+//get request -> /api/item/:id (show )
 router.get("/:id", itemsController.show);
 
-//put -> /api/item/:id (put)
-router.put("/:id", itemsController.update)
+//put request -> /api/item/:id (put)
+router.put("/:id", itemsController.update);
 
-// Delete -> api/item/:id  (delete)
-router.delete('/:id', itemsController.delete);
+// Delete request -> api/item/:id  (delete)
+router.delete("/:id", itemsController.delete);
 
 module.exports = router;

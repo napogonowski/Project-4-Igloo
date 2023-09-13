@@ -1,7 +1,7 @@
 import * as userService from "../../utilities/users-service";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-export default function SideBar({ user, setUser }) {
+export default function ShoppingSideBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -97,26 +97,24 @@ export default function SideBar({ user, setUser }) {
               Freezer
             </Button>
           </div>
-          <Link to="shoppinglist">
-            <Button variant="ghost" className="w-full justify-start">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="mr-2 h-4 w-4"
-              >
-                <path d="m16 6 4 14" />
-                <path d="M12 6v14" />
-                <path d="M8 8v12" />
-                <path d="M4 4v16" />
-              </svg>
-              Shopping List
-            </Button>
-          </Link>
+          <Button variant="ghost" className="w-full justify-start">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="mr-2 h-4 w-4"
+            >
+              <path d="m16 6 4 14" />
+              <path d="M12 6v14" />
+              <path d="M8 8v12" />
+              <path d="M4 4v16" />
+            </svg>
+            Shopping List
+          </Button>
           <Button
             onClick={handleLogOut}
             variant="ghost"
