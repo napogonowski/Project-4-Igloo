@@ -41,7 +41,7 @@ export default function LoginForm({ setUser }) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-          <div className=" items-center gap-4">
+            <div className=" items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label className=" mb-3 ml-3 text-left scroll-m-20 text-xl font-semibold tracking-tight">
                   Email:
