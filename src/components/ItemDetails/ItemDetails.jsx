@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EditItemForm from "../EditItemForm/EditItemForm";
 import * as itemService from "../../utilities/items-service";
-import * as shoppingService from "../../utilities/shopping-service"
+import * as shoppingService from "../../utilities/shopping-service";
 import { Button } from "../ui/button";
 
 import { Table, TableBody, TableCell, TableHead, TableRow } from "../ui/table";
@@ -39,8 +39,7 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
   }
 
   async function _handleNewShoppingItem(selectedItem) {
-    const newShoppingItem = await shoppingService.createItem(selectedItem)
-
+    const newShoppingItem = await shoppingService.createItem(selectedItem);
   }
 
   function toggleEdit() {
@@ -85,14 +84,16 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
                   {/* {selectedItem
                     ? new Date(selectedItem.expDate).toDateString()
                     : ""} */}
-                    {goingToExpire(selectedItem.expDate)} Days
+                  {goingToExpire(selectedItem.expDate)} Days
                 </TableCell>
               </TableRow>
             </TableBody>
             <Button onClick={toggleEdit} className="m-5">
               EDIT
             </Button>
-            <Button onClick={() => _handleNewShoppingItem(selectedItem)}>Add To Shopping List </Button>
+            <Button onClick={() => _handleNewShoppingItem(selectedItem)}>
+              Add To Shopping List{" "}
+            </Button>
             <Button onClick={() => _handleDelete(selectedId)}>DELETE</Button>
           </Table>
         </div>

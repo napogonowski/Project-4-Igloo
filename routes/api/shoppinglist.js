@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 // sL = shoppingList
-const sLController = require("../../controllers/shoppinglist");
+const sLController = require("../../controllers/api/shoppinglist");
 
 // All paths start with /api/shoppinglist
 

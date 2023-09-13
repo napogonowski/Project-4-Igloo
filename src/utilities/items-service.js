@@ -32,8 +32,8 @@ export async function deleteItem(selectedId) {
   return res;
 }
 
-export async function editItem(editItem){
-  console.log("item Service page", editItem)
-  const res = await itemsAPI.editItem(editItem)
-  return res; 
+export async function editItem(editItem) {
+  console.log("item Service page", editItem);
+  const res = await itemsAPI.editItem(editItem);
+  return res;
 }
