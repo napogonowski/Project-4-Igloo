@@ -5,7 +5,7 @@ import * as shoppingService from "../../utilities/shopping-service";
 import ShoppingListTable from "../../components/ShoppingListTable/ShoppingListTable";
 import ShoppingSideBar from "../../components/SideBar/ShoppingSideBar";
 import ShoppingItemForms from "../../components/ ShoppingItemForms/ShoppingItemForms";
-import "./ShoppingListPage.css";
+
 
 export default function ShoppingListPage({ user, setUser }) {
   const [shoppingItems, setShoppingItems] = useState([]);
@@ -14,10 +14,8 @@ export default function ShoppingListPage({ user, setUser }) {
   const selectedId = searchParams.get("selectedId");
 
   async function getOneItem(selectedId) {
-    try {
-      const item = await shoppingService.getOneItem(selectedId);
-      setSelectedItem(item);
-    } catch (error) {}
+    const item = await shoppingService.getOneItem(selectedId);
+    setSelectedItem(item);
   }
 
   function _handleExport() {
@@ -25,17 +23,12 @@ export default function ShoppingListPage({ user, setUser }) {
   }
 
   async function deleteAllItems(user) {
-    console.log(user);
     const aftermath = await shoppingService.deleteAllItems(user);
     setShoppingItems([]);
   }
   async function getUserShoppingItems({ user }) {
-    try {
-      const allItems = await shoppingService.getUserShoppingItems({ user });
-      setShoppingItems(allItems);
-    } catch (error) {
-      console.log("SLP log", error);
-    }
+    const allItems = await shoppingService.getUserShoppingItems({ user });
+    setShoppingItems(allItems);
   }
   function _handleAdd(item) {
     setShoppingItems([...shoppingItems, item]);
@@ -78,7 +71,7 @@ export default function ShoppingListPage({ user, setUser }) {
             selectedItem={selectedItem}
           />
         </div>
-        <div className="tabledContent col-start-3 col-span-4 row-start-2  row-span-2">
+        <div className="tabledContent col-start-3 col-span-4 row-start-2 row-span-2">
           <Button
             onClick={_handleExport}
             className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"

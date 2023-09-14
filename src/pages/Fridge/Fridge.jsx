@@ -1,22 +1,16 @@
 import FridgeItem from "../../components/FridgeItem/FridgeItem";
 import SideBar from "../../components/SideBar/SideBar";
-import * as userService from "../../utilities/users-service";
 import * as itemService from "../../utilities/items-service";
 
 import { useState, useEffect } from "react";
 import ItemDetails from "../../components/ItemDetails/ItemDetails";
-import "./Fridge.css";
 
 export default function Fridge({ user, setUser }) {
   const [userItems, setUserItems] = useState([]);
 
   async function getUserItems({ user }) {
-    try {
-      const items = await itemService.getUserItems(user);
-      setUserItems(items);
-    } catch (error) {
-      console.log("Failed to get user item: ", error);
-    }
+    const items = await itemService.getUserItems(user);
+    setUserItems(items);
   }
   useEffect(() => {
     getUserItems({ user });
@@ -50,7 +44,7 @@ export default function Fridge({ user, setUser }) {
         {userItems.length > 0 ? (
           <FridgeItem goingToExpire={goingToExpire} userItems={userItems} />
         ) : (
-          <h3 className="">No items Yet !</h3>
+          <h3>No items Yet !</h3>
         )}
       </div>
       <div className="col-start-6 col-span-2 grid">

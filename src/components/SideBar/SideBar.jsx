@@ -1,7 +1,7 @@
 import * as userService from "../../utilities/users-service";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Refrigerator, ScrollText, PlusSquare, ArrowLeft } from "lucide-react";
+import { ScrollText, PlusSquare, ArrowLeft } from "lucide-react";
 export default function SideBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();

@@ -9,15 +9,11 @@ module.exports = {
 };
 
 async function update(req, res) {
-  // console.log("controller function log 1 ", req.body)
   try {
     const itemId = req.params.id;
-
-    // console.log("controller function log 2 ", itemId)
     const updatedItem = await Item.findByIdAndUpdate(itemId, req.body, {
       new: true,
     });
-    console.log("controller function log 3", updatedItem);
     res.json(updatedItem);
   } catch (error) {
     res.status(400).json(error);
@@ -56,11 +52,9 @@ async function index(req, res) {
 async function createItem(req, res) {
   try {
     const items = req.body.formData;
-    console.log("recieved POST request with data", req.body);
     const newItems = await Item.create(
       items.map((item) => ({ ...item, user: req.user._id }))
     );
-    console.log("new item ", newItems);
     res.json(newItems);
   } catch (error) {
     res.status(400).json(error);

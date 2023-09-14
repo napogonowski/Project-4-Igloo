@@ -6,11 +6,7 @@ const itemSchema = new Schema(
     qty: String,
     expDate: { type: Date, required: true },
     fridge: { type: Boolean, required: true },
-    // frozen: { type: Boolean, required: true },
-    // frozen
-    // category: { type: Schema.Types.ObjectId, ref: "Category" },
     user: { type: Schema.Types.ObjectId, ref: "User" },
-    // location /
   },
   {
     timestamps: true,

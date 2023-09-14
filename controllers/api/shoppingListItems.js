@@ -1,4 +1,4 @@
-const ShoppingListItem = require("../../models/shoppingListItem");
+const ShoppingListItem = require("../../models/ShoppingListItem");
 
 module.exports = {
   createItem,
@@ -12,7 +12,6 @@ module.exports = {
 async function update(req, res) {
   try {
     const itemId = req.params.id;
-    console.log("controller function ", itemId);
     const updatedItem = await ShoppingListItem.findByIdAndUpdate(
       itemId,
       req.body,
@@ -31,7 +30,6 @@ async function deleteAll(req, res) {
     aftermath = await ShoppingListItem.deleteMany({ user: req.user._id });
     res.json(aftermath);
   } catch (error) {
-    console.log(error);
     res.status(400).json(error);
   }
 }
@@ -67,9 +65,7 @@ async function index(req, res) {
 
 async function createItem(req, res) {
   try {
-    console.log("controller function", req.body.itemData);
     const { name, qty } = req.body.itemData;
-    console.log("contoller function ", name, qty);
     const newItem = await ShoppingListItem.create({
       name: name,
       qty: qty,

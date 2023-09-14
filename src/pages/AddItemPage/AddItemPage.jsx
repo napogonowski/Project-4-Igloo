@@ -1,15 +1,9 @@
-import * as usersService from "../../utilities/users-service";
 import * as itemsService from "../../utilities/items-service";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ItemForm from "../../components/ItemForm/ItemForm";
 import { Button } from "../../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "../../components/ui/card";
+import { Card, CardHeader, CardTitle } from "../../components/ui/card";
 
 const initialItem = {
   name: "",
@@ -23,6 +17,7 @@ export default function AddItemPage({ user }) {
   const [formFieldCount, setFormFieldCount] = useState(1);
   const navigate = useNavigate();
 
+  // Still figure out
   async function _handleSubmit(e) {
     e.preventDefault();
     try {
@@ -34,7 +29,6 @@ export default function AddItemPage({ user }) {
           ...prevFormData,
           expDate: originalExpDate.toISOString(),
         }));
-        console.log("changed date", originalExpDate);
       }
       const newItem = await itemsService.createItem(formData);
       navigate("/fridge");

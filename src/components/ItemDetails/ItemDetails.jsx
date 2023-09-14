@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 import { Table, TableBody, TableCell, TableHead, TableRow } from "../ui/table";
 import EditItemForm from "../EditItemForm/EditItemForm";
 
-export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
+export default function ItemDetails({ setUserItem, goingToExpire }) {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const selectedId = searchParams.get("selectedId");
@@ -15,12 +15,8 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
   const [selectedItem, setSelectedItem] = useState({});
 
   async function getOneItem(selectedId) {
-    try {
-      const item = await itemService.getOneItem(selectedId);
-      setSelectedItem(item);
-    } catch (error) {
-      console.log("failed to get user Item", error);
-    }
+    const item = await itemService.getOneItem(selectedId);
+    setSelectedItem(item);
   }
 
   useEffect(() => {

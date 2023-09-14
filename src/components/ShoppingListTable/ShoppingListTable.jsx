@@ -1,5 +1,5 @@
 import * as shoppingService from "../../utilities/shopping-service";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Hash, Trash2, MoreHorizontal } from "lucide-react";
@@ -13,7 +13,6 @@ import {
 } from "../ui/table";
 export default function ShoppingListTable({ shoppingItems, setShoppingItems }) {
   async function _handleDelete(selectedId) {
-    console.log("page function", selectedId);
     const newItemList = await shoppingService.deleteItem(selectedId);
     setShoppingItems(newItemList);
   }
