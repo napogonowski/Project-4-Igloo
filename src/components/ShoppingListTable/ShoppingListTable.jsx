@@ -1,3 +1,5 @@
+import * as shoppingService from "../../utilities/shopping-service";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import {
@@ -8,7 +10,18 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-export default function ShoppingListTable({ shoppingItems }) {
+export default function ShoppingListTable({
+  shoppingItems,
+  setShoppingItems,
+  toggleEdit,
+  selectedId,
+}) {
+  async function _handleDelete(selectedId) {
+    console.log("page function", selectedId)
+    const newItemList = await shoppingService.deleteItem(selectedId);
+    setShoppingItems(newItemList);
+  }
+
   return (
     <>
       <div>
@@ -39,10 +52,14 @@ export default function ShoppingListTable({ shoppingItems }) {
                         </div>
                         <div className="grid gap-2">
                           <div className="grid grid-cols-3 items-center gap-4">
-                            <Button>EDIT</Button>
+                            <Link to={`?selectedId=${item._id}`}>
+                              <Button onClick={toggleEdit}>EDIT</Button>
+                            </Link>
                           </div>
                           <div className="grid grid-cols-3 items-center gap-4">
-                            <Button>X</Button>
+                            <Button onClick={() => _handleDelete(item._id)}>
+                              X
+                            </Button>
                           </div>
                         </div>
                       </div>

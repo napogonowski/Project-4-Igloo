@@ -5,9 +5,20 @@ const sLController = require("../../controllers/api/shoppingListItems");
 
 // All paths start with /api/shoppinglist
 
-// post request -> /api/shoppinglist (create item)
+// post request -> /api/shoppinglist (create a new item)
 router.post("/", sLController.createItem);
 
-// get request -> /api/shoppinglist  (get all  / index)
+// get request -> /api/shoppinglist  INDEX (get all  / getting all items )
 router.get("/", sLController.index)
+
+// get request -> /api/shoppinglist/:id SHOW (getting one item )
+router.get('/:id', sLController.show)
+
+// delete request -> api/shoppinglist/:id Delete (deleting one item )
+router.delete("/:id", sLController.delete)
+
+// delete request -> api/shoppinglist/:id Delete (deleting ALL items )
+router.delete("/:id", sLController.deleteAll)
+
+
 module.exports = router;

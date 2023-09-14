@@ -66,6 +66,7 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
       {isEditing ? (
         <EditItemForm selectedItem={selectedItem} onSaved={handleSaved} />
       ) : (
+        // is in own component ?  
         <div className="m-5 p-10">
           <h3 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             {selectedItem.name}
@@ -79,9 +80,6 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
               <TableRow>
                 <TableHead>Expiring In:</TableHead>
                 <TableCell>
-                  {/* {selectedItem
-                    ? new Date(selectedItem.expDate).toDateString()
-                    : ""} */}
                   {goingToExpire(selectedItem.expDate)} Days
                 </TableCell>
               </TableRow>

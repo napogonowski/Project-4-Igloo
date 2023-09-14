@@ -12,7 +12,7 @@ export async function getUserItems() {
 
 export async function getOneItem(selectedId) {
   // console.log("API page", selectedId);
-  return sendRequest(`${BASE_URL}/${selectedId}`, "GET");
+  return sendRequest(`${BASE_URL}/${selectedId}`);
 }
 
 export async function deleteItem(selectedId) {
