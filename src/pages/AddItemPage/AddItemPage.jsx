@@ -26,7 +26,16 @@ export default function AddItemPage({ user }) {
   async function _handleSubmit(e) {
     e.preventDefault();
     try {
-      console.log("Item form JSX Page ", formData);
+      console.log(formData);
+      if (!formData.fridge) {
+        const originalExpDate = new Date(formData.expDate);
+        originalExpDate.setDate(originalExpDate.getDate() + 60);
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          expDate: originalExpDate.toISOString(),
+        }));
+        console.log("changed date", originalExpDate);
+      }
       const newItem = await itemsService.createItem(formData);
       navigate("/fridge");
       console.log(newItem, formData);
@@ -89,7 +98,7 @@ export default function AddItemPage({ user }) {
                   }}
                 />
               ))}
-          </div>
+            </div>
           </Card>
           <Button
             className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-10"

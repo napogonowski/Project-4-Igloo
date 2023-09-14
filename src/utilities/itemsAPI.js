@@ -7,11 +7,9 @@ export async function createItem(formData) {
 
 export async function getUserItems() {
   return sendRequest(BASE_URL);
-  // internal server error
 }
 
 export async function getOneItem(selectedId) {
-  // console.log("API page", selectedId);
   return sendRequest(`${BASE_URL}/${selectedId}`);
 }
 
@@ -21,6 +19,5 @@ export async function deleteItem(selectedId) {
 
 export async function editItem(editItem) {
   const selectedId = editItem._id;
-  console.log("API Log", selectedId);
   return sendRequest(`${BASE_URL}/${selectedId}`, "PUT", editItem);
 }

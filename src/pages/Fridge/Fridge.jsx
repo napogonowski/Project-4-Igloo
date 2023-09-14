@@ -29,8 +29,6 @@ export default function Fridge({ user, setUser }) {
     // convert into MS for comparrison
     const todayInMs = today.getTime();
     const itemTimeInMs = parsedItemTime.getTime();
-    console.log("Item Object", parsedItemTime);
-    console.log("Now ", today);
 
     // finding difference
     const msDifference = itemTimeInMs - todayInMs;
@@ -40,15 +38,14 @@ export default function Fridge({ user, setUser }) {
 
     //converting difference to day
     const daysLeft = Math.round(msDifference / dayConverter);
-    console.log("day calcuation", daysLeft);
     return daysLeft;
   }
 
   return (
-    <main className="grid grid-cols-7  	gap-4">
-      <aside className="col-start-1  col-span-2 row-span-3 rounded-2xl">
+    <main className="grid grid-cols-7 gap-4">
+      <div className="col-start-1  col-span-2 row-span-3 rounded-2xl">
         <SideBar user={user} setUser={setUser} />
-      </aside>
+      </div>
       <div className=" col-start-3 col-span-3">
         {userItems.length > 0 ? (
           <FridgeItem goingToExpire={goingToExpire} userItems={userItems} />
@@ -58,7 +55,6 @@ export default function Fridge({ user, setUser }) {
       </div>
       <div className="col-start-6 col-span-2 grid">
         <ItemDetails
-        
           goingToExpire={goingToExpire}
           userItem={userItems}
           setUserItem={setUserItems}
