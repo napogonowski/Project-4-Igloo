@@ -36,11 +36,11 @@ export default function Fridge({ user, setUser }) {
   }
 
   return (
-    <main className="grid grid-cols-7 gap-4">
-      <div className="col-start-1  col-span-2 row-span-3 rounded-2xl">
+    <main className="grid grid-cols-7 grid-rows-2 gap-4">
+      <div className="col-start-1 col-span-2 rounded-2xl">
         <SideBar user={user} setUser={setUser} />
       </div>
-      <div className=" col-start-3 col-span-3">
+      <div className=" col-start-3  row-span-2 col-span-3">
         {userItems.length > 0 ? (
           <FridgeItem goingToExpire={goingToExpire} userItems={userItems} />
         ) : (

@@ -21,15 +21,6 @@ export default function AddItemPage({ user }) {
   async function _handleSubmit(e) {
     e.preventDefault();
     try {
-      console.log(formData);
-      if (!formData.fridge) {
-        const originalExpDate = new Date(formData.expDate);
-        originalExpDate.setDate(originalExpDate.getDate() + 60);
-        setFormData((prevFormData) => ({
-          ...prevFormData,
-          expDate: originalExpDate.toISOString(),
-        }));
-      }
       const newItem = await itemsService.createItem(formData);
       navigate("/fridge");
       console.log(newItem, formData);
@@ -42,9 +33,9 @@ export default function AddItemPage({ user }) {
     <>
       <div className=" grid grid-cols-3 grid-rows-2">
         <div className="col-start-1">
-          <div className="mt-10">
+          <div className="mt-10 ml-20  ">
             <Link to="/fridge">
-              <Button className="w-1/2 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5">
+              <Button className="w-1/2 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5 ">
                 Home
               </Button>
             </Link>
@@ -69,7 +60,7 @@ export default function AddItemPage({ user }) {
           autoComplete="off"
           onSubmit={_handleSubmit}
         >
-          <Card className="border-4	mt-10 flex w-full flex-col justify-center space-y-6 w-1/3 w-[550px] background-blur bg-white/50 ">
+          <Card className="border-4	mt-10 ml-20 flex w-full flex-col justify-center space-y-6 w-1/3 w-[550px] background-blur bg-white/50 ">
             <CardHeader>
               <CardTitle className="scroll-m-20 pb-2 text-5xl font-semibold tracking-tight  first:mt-0">
                 Add New Item

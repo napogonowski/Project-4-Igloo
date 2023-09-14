@@ -15,7 +15,7 @@ export default function AddShoppingItemForm({
           <form autoComplete="off" onSubmit={_handleSubmit}>
             <Card className=" background-blur bg-white/50 rounded-3xl p-10 m-5 w-[500px]">
               <CardHeader>
-                <CardTitle className="scroll-m-20  text-4xl font-semibold tracking-wide transition-colors first:mt-0">
+                <CardTitle className="scroll-m-20 text-4xl font-semibold tracking-wide transition-colors first:mt-0">
                   New Item
                 </CardTitle>
               </CardHeader>

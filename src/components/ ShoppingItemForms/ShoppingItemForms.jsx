@@ -33,8 +33,8 @@ export default function ShoppingItemForms({
   }
   return (
     <>
-      <div className="">
-        <div className="">
+      <div>
+        <div>
           {isEditing ? (
             <EditShoppingItemForm
               selectedItem={selectedItem}

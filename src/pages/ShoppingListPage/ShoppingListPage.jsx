@@ -6,7 +6,6 @@ import ShoppingListTable from "../../components/ShoppingListTable/ShoppingListTa
 import ShoppingSideBar from "../../components/SideBar/ShoppingSideBar";
 import ShoppingItemForms from "../../components/ ShoppingItemForms/ShoppingItemForms";
 
-
 export default function ShoppingListPage({ user, setUser }) {
   const [shoppingItems, setShoppingItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState({});
@@ -88,7 +87,6 @@ export default function ShoppingListPage({ user, setUser }) {
             selectedId={selectedId}
             shoppingItems={shoppingItems}
             setShoppingItems={setShoppingItems}
-            // toggleEdit={toggleEdit}
           />
         </div>
       </main>

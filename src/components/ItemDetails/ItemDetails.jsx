@@ -70,12 +70,16 @@ export default function ItemDetails({ setUserItem, goingToExpire }) {
           <Table>
             <TableBody>
               <TableRow>
-                <TableHead>Quantity</TableHead>
-                <TableCell>{selectedItem.qty}</TableCell>
+                <TableHead className="text-black text-lg">Quantity</TableHead>
+                <TableCell className="text-black text-lg">
+                  {selectedItem.qty}
+                </TableCell>
               </TableRow>
               <TableRow>
-                <TableHead>Expiring In:</TableHead>
-                <TableCell>
+                <TableHead className="text-black text-lg">
+                  Expiring In:
+                </TableHead>
+                <TableCell className="text-black text-lg">
                   {goingToExpire(selectedItem.expDate)} Days
                 </TableCell>
               </TableRow>

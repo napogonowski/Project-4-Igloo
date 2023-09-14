@@ -38,13 +38,13 @@ export default function ShoppingListTable({ shoppingItems, setShoppingItems }) {
           <TableBody>
             {shoppingItems.map((item, index) => (
               <TableRow key={item._id}>
-                <TableCell className="text-base font-bold">
+                <TableCell className="text-base font-bold ">
                   {index + 1}
                 </TableCell>
-                <TableCell className="text-base font-bold">
+                <TableCell className="text-xl font-bold tracking-wide">
                   {item.name}
                 </TableCell>
-                <TableCell className="text-base font-semibold">
+                <TableCell className="text-base font-semibold tracking-wide">
                   {item.qty}
                 </TableCell>
                 <TableCell>

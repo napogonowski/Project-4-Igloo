@@ -72,11 +72,11 @@ export default function EditItemForm({ selectedItem, onSaved }) {
             onChange={_handleChange}
             type="text"
           />
-          <label className="scroll-m-20 mt-5 text-xl font-semibold tracking-wide">
+          <label className="scroll-m-20 mt-3 text-xl font-semibold tracking-wide">
             Quantity:{" "}
           </label>
           <input
-            className="m-2  text-lg p-4 h-1 rounded-md"
+            className="m-2  text-black text-lg p-4 h-1 rounded-md"
             name="qty"
             value={editItem.qty}
             onChange={_handleChange}
