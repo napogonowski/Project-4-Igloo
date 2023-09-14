@@ -37,25 +37,27 @@ export default function AddItemPage({ user }) {
     <>
       <div className=" grid grid-cols-3 grid-rows-5 mt-10">
         <div className="col-start-1  mr-[-20]">
-          <Link to="/fridge">
-            <Button className="m-5 text-xl font-bold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-4 hover:scale-110 hover:bg-orange-500 duration-300 ">
-              Home
+          <div className="mt-10">
+            <Link to="/fridge">
+              <Button className="w-1/2 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5">
+                Home
+              </Button>
+            </Link>
+            <br />
+            <Button
+              className="w-1/2 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
+              onClick={() => setFormFieldCount(formFieldCount + 1)}
+            >
+              +1 Item
             </Button>
-          </Link>
-          <br />
-          <Button
-            className=" m-5 text-xl font-bold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-4 hover:scale-110 hover:bg-orange-500 duration-300 "
-            onClick={() => setFormFieldCount(formFieldCount + 1)}
-          >
-            +1 Item
-          </Button>
-          <br />
-          <Button
-            className=" m-5  text-xl font-bold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-4 hover:scale-110 hover:bg-orange-500 duration-300 "
-            onClick={() => setFormFieldCount(formFieldCount - 1)}
-          >
-            -1 Item
-          </Button>
+            <br />
+            <Button
+              className="w-1/2 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
+              onClick={() => setFormFieldCount(formFieldCount - 1)}
+            >
+              -1 Item
+            </Button>
+          </div>
         </div>
         <form
           className=" col-start-2 row-start-1"
@@ -88,10 +90,10 @@ export default function AddItemPage({ user }) {
             </div>
           </Card>
           <Button
-            className=" m-7 p-5  text-xl tracking-wider font-bold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-4 hover:scale-110 hover:bg-orange-500 duration-300 "
+            className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-10"
             type="submit"
           >
-            Submit
+            SUBMIT
           </Button>
         </form>
       </div>

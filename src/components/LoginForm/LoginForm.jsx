@@ -34,7 +34,7 @@ export default function LoginForm({ setUser }) {
   return (
     <>
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <Card className="mx-auto flex w-full flex-col justify-center space-y-6 w-1/3 sm:w-[500px] sm:h-[550px] background-blur bg-white/50  ">
+        <Card className=" w-full flex flex-col justify-center space-y-6 sm:w-[500px] sm:h-[550px] background-blur bg-white/50  ">
           <CardHeader>
             <CardTitle className="scroll-m-20 text-4xl font-bold tracking-wide lg:text-6xl mb-5">
               Login
@@ -72,7 +72,7 @@ export default function LoginForm({ setUser }) {
             </div>
           </CardContent>
           <Button
-            className=" m-5 text-xl tracking-wider font-bold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-4 hover:scale-110 hover:bg-orange-500 duration-300"
+            className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5"
             type="submit"
           >
             LOG IN

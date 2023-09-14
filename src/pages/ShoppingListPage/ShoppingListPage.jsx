@@ -9,7 +9,6 @@ import "./ShoppingListPage.css";
 
 export default function ShoppingListPage({ user }) {
   const [shoppingItems, setShoppingItems] = useState([]);
-  // const [isEditing, setIsEditing] = useState(true);
   const [selectedItem, setSelectedItem] = useState({});
   const [searchParams] = useSearchParams();
   const selectedId = searchParams.get("selectedId");
@@ -20,9 +19,6 @@ export default function ShoppingListPage({ user }) {
       setSelectedItem(item);
     } catch (error) {}
   }
-  // function toggleEdit() {
-  //   setIsEditing(!isEditing);
-  // }
 
   function _handleExport() {
     alert(`Your Shopping List has been Exported to: \n ${user.email}`);
@@ -61,8 +57,18 @@ export default function ShoppingListPage({ user }) {
           />
         </div>
         <div className="tabledContent col-start-3 col-span-4 row-start-2  row-span-2 bg-green-500">
-          <Button onClick={_handleExport}>Export List </Button>
-          <Button onClick={() => deleteAllItems(user)}>Clear ALL</Button>
+          <Button
+            onClick={_handleExport}
+            className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
+          >
+            Export List{" "}
+          </Button>
+          <Button
+            onClick={() => deleteAllItems(user)}
+            className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
+          >
+            Clear ALL
+          </Button>
           <ShoppingListTable
             selectedId={selectedId}
             shoppingItems={shoppingItems}

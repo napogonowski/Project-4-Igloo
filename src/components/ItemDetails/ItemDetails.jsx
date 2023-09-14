@@ -85,24 +85,26 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
               </TableRow>
             </TableBody>
           </Table>
-          <Button
-            onClick={toggleEdit}
-            className="m-5 text-base font-bold tracking-wider "
-          >
-            EDIT
-          </Button>
-          <Button
-            onClick={() => _handleItemTransfer(selectedItem)}
-            className="m-5 text-base font-bold tracking-wider"
-          >
-            Tranfer Item
-          </Button>
-          <Button
-            onClick={() => _handleDelete(selectedId)}
-            className="m-5 text-base font-bold tracking-wider "
-          >
-            DELETE
-          </Button>
+          <div className="grid grid-cols-3 gap-5">
+            <Button
+              onClick={toggleEdit}
+              className="cols-start-1 w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-4"
+            >
+              EDIT
+            </Button>
+            <Button
+              onClick={() => _handleItemTransfer(selectedItem)}
+              className="cols-start-2 w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-4"
+            >
+              Tranfer Item
+            </Button>
+            <Button
+              onClick={() => _handleDelete(selectedId)}
+              className="cols-start-3 w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-4"
+            >
+              DELETE
+            </Button>
+          </div>
         </div>
       )}
     </>

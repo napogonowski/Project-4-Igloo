@@ -24,47 +24,64 @@ export default function ShoppingListTable({
     const newItemList = await shoppingService.deleteItem(selectedId);
     setShoppingItems(newItemList);
   }
-  // function _handleLink(item){
-  //   navigate(`/shoppinglist?{item}`)
-  //   toggleEdit();
-  // }
 
   return (
     <>
-      <div>
+      <div className="background-blur bg-white/50 p-10 m-5">
         <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Item Number</TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Quantity</TableHead>
+          <TableHeader className="">
+            <TableRow className="bg-cyan-500 text-white rounded-3xl">
+              <TableHead className="text-white text-base tracking-wide">
+                Item Number
+              </TableHead>
+              <TableHead className="text-white text-base tracking-wide">
+                Name
+              </TableHead>
+              <TableHead className="text-white text-base tracking-wide">
+                Quantity
+              </TableHead>
               <TableHead></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {shoppingItems.map((item, index) => (
               <TableRow key={item._id}>
-                <TableCell className="font-medium">{index + 1}</TableCell>
-                <TableCell>{item.name}</TableCell>
-                <TableCell>{item.qty}</TableCell>
+                <TableCell className="text-base font-bold">
+                  {index + 1}
+                </TableCell>
+                <TableCell className="text-base font-bold">
+                  {item.name}
+                </TableCell>
+                <TableCell className="text-base font-semibold">
+                  {item.qty}
+                </TableCell>
                 <TableCell>
                   <Popover>
                     <PopoverTrigger asChild>
-                      <Button variant="outline">...</Button>
+                      <Button className="text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5">
+                        ...
+                      </Button>
                     </PopoverTrigger>
-                    <PopoverContent className="w-50">
+                    <PopoverContent className="w-50 item-center">
                       <div className="grid gap-4">
                         <div className="space-y-2">
-                          <h4 className="font-medium leading-none">Actions</h4>
+                          <h4 className="text-lg font-bold m-2 underline leading-none">
+                            Actions
+                          </h4>
                         </div>
                         <div className="grid gap-2">
-                          <div className="grid grid-cols-3 items-center gap-4">
+                          <div className="grid grid-cols-1 items-center gap-4">
                             <Link to={`?selectedId=${item._id}`}>
-                              <Button>EDIT</Button>
+                              <Button className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5">
+                                EDIT
+                              </Button>
                             </Link>
                           </div>
-                          <div className="grid grid-cols-3 items-center gap-4">
-                            <Button onClick={() => _handleDelete(item._id)}>
+                          <div className="grid grid-cols-1 items-center gap-4">
+                            <Button
+                              onClick={() => _handleDelete(item._id)}
+                              className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5"
+                            >
                               X
                             </Button>
                           </div>

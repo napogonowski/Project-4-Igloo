@@ -27,15 +27,19 @@ export default function ShoppingItemForms({ isEditing, selectedItem }) {
   }
   return (
     <>
-      {isEditing ? (
-        <EditShoppingItemForm selectedItem={selectedItem} />
-      ) : (
-        <AddShoppingItemForm
-          formData={formData}
-          _handleChange={_handleChange}
-          _handleSubmit={_handleSubmit}
-        />
-      )}
+      <div className="">
+        <div className="">
+          {isEditing ? (
+            <EditShoppingItemForm selectedItem={selectedItem} />
+          ) : (
+            <AddShoppingItemForm
+              formData={formData}
+              _handleChange={_handleChange}
+              _handleSubmit={_handleSubmit}
+            />
+          )}
+        </div>
+      </div>
     </>
   );
 }

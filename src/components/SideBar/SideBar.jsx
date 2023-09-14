@@ -10,21 +10,23 @@ export default function SideBar({ user, setUser }) {
     <div className="background-blur bg-white/50 rounded-3xl p-10 m-5">
       <div className="space-y-4 py-4 ">
         <div className="px-3 py-2 ">
-          <h2 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-10">
+          <h2 className="scroll-m-20 text-4xl font-extrabold tracking-widest lg:text-5xl mb-10">
             IGLOO
           </h2>
           <div className="space-y-1">
-            <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
+            <h2 className="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight transition-colors first:mt-0">
               Welcome {user.name}
             </h2>
           </div>
         </div>
-        <div className="px-3 py-2 grid grid-cols-3">
-          <div className="col-start-2">
-            <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-              Actions
-            </h2>
-            <div className="space-y-1">
+        <div className="px-3 py-2 grid grid-cols-5 grid-rows-2">
+          <div className="col-start-2 col-span-3 ">
+            <div className="row-start-2">
+              <h2 className="mb-10 px-4 text-2xl font-semibold tracking-tight">
+                Actions
+              </h2>
+            </div>
+            <div className="space-y-1 row-start-3">
               <Link to="/fridge/new">
                 <Button className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5">
                   <svg
@@ -48,7 +50,6 @@ export default function SideBar({ user, setUser }) {
               </Link>
             </div>
             <Link to="/shoppinglist">
-              {/* <Button className="w-full justify-start"> */}
               <Button className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
