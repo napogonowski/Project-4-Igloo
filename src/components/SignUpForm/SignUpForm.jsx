@@ -43,7 +43,7 @@ export default class SignUpForm extends Component {
     return (
       <>
         <form className="" autoComplete="off" onSubmit={this.handleSubmit}>
-          <Card className="mx-auto flex w-full flex-col justify-center space-y-6 w-1/3 sm:w-[550px] sm:h-[740px]">
+          <Card className="mx-auto flex w-full flex-col justify-center space-y-6">
             <CardHeader>
               <CardTitle className="text-5xl font-bold tracking-wide lg:text-6xl">
                 Sign Up

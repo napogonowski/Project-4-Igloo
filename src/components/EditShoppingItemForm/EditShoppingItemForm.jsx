@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-export default function EditShoppingItemForm({ selectedItem }) {
+export default function EditShoppingItemForm({ selectedItem, onSaved }) {
   const navigate = useNavigate();
   const [editItem, setEditItem] = useState({
     _id: "",
@@ -30,7 +30,7 @@ export default function EditShoppingItemForm({ selectedItem }) {
     e.preventDefault();
     try {
       const updatedItem = await shoppingService.updateItem(editItem);
-      // onSaved(updatedItem);
+      onSaved(updatedItem);
     } catch (error) {}
     navigate("/shoppinglist");
   }
@@ -43,7 +43,7 @@ export default function EditShoppingItemForm({ selectedItem }) {
   return (
     <>
       <div className="grid grid-cols-5">
-        <div className="col-start-3 ">
+        <div className="col-start-2 ml-20 ">
           <form autoComplete="off" onSubmit={_handleSubmit}>
             <Card className=" background-blur bg-white/50 rounded-3xl p-10 m-5 w-[500px]">
               <CardHeader>

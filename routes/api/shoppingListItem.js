@@ -17,10 +17,10 @@ router.get("/:id", sLController.show);
 // put request -> api/shopplinglist/:id update (updating an item)
 router.put("/:id", sLController.update);
 
+// delete request -> api/shoppinglist/:id Delete (deleting ALL items )
+router.delete("/all", sLController.deleteAll);
+
 // delete request -> api/shoppinglist/:id Delete (deleting one item )
 router.delete("/:id", sLController.delete);
-
-// delete request -> api/shoppinglist/:id Delete (deleting ALL items )
-router.delete("/:id", sLController.deleteAll);
 
 module.exports = router;

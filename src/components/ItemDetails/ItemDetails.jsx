@@ -41,7 +41,7 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
     setIsEditing(!isEditing);
   }
 
-  function handleSaved(item) {
+  function _handleSaved(item) {
     setSelectedItem(item);
     setUserItem((prevUserItem) => {
       // Replace old item with new item.
@@ -64,7 +64,7 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
   return (
     <>
       {isEditing ? (
-        <EditItemForm selectedItem={selectedItem} onSaved={handleSaved} />
+        <EditItemForm selectedItem={selectedItem} onSaved={_handleSaved} />
       ) : (
         // is in own component ?
         <div className="m-5 p-10 background-blur bg-white/50 rounded-3xl ">
@@ -96,7 +96,7 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
               onClick={() => _handleItemTransfer(selectedItem)}
               className="cols-start-2 w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-4"
             >
-              Tranfer Item
+              TRANSFER
             </Button>
             <Button
               onClick={() => _handleDelete(selectedId)}

@@ -7,7 +7,7 @@ import ShoppingSideBar from "../../components/SideBar/ShoppingSideBar";
 import ShoppingItemForms from "../../components/ ShoppingItemForms/ShoppingItemForms";
 import "./ShoppingListPage.css";
 
-export default function ShoppingListPage({ user }) {
+export default function ShoppingListPage({ user, setUser }) {
   const [shoppingItems, setShoppingItems] = useState([]);
   const [selectedItem, setSelectedItem] = useState({});
   const [searchParams] = useSearchParams();
@@ -27,6 +27,7 @@ export default function ShoppingListPage({ user }) {
   async function deleteAllItems(user) {
     console.log(user);
     const aftermath = await shoppingService.deleteAllItems(user);
+    setShoppingItems([]);
   }
   async function getUserShoppingItems({ user }) {
     try {
@@ -36,6 +37,25 @@ export default function ShoppingListPage({ user }) {
       console.log("SLP log", error);
     }
   }
+  function _handleAdd(item) {
+    setShoppingItems([...shoppingItems, item]);
+  }
+
+  function _handleSaved(item) {
+    setSelectedItem(item);
+    setShoppingItems((prevUserItem) => {
+      const index = prevUserItem.findIndex((i) => i._id === item._id);
+      if (index > -1) {
+        return [
+          ...prevUserItem.slice(0, index),
+          item,
+          ...prevUserItem.slice(index + 1),
+        ];
+      }
+      return prevUserItem;
+    });
+  }
+
   useEffect(() => {
     getUserShoppingItems({ user });
   }, []);
@@ -48,10 +68,12 @@ export default function ShoppingListPage({ user }) {
     <>
       <main className="shoppingList grid grid-cols-6  grid-rows-3	gap-4	">
         <aside className="bg-red-500 col-start-1  col-span-2 row-span-3 rounded-2xl">
-          <ShoppingSideBar user={user} />
+          <ShoppingSideBar user={user} setUser={setUser} />
         </aside>
         <div className="tabledContent col-start-3 col-span-4 row-start-1  bg-blue-500">
           <ShoppingItemForms
+            onAdd={_handleAdd}
+            onSaved={_handleSaved}
             isEditing={!!selectedId}
             selectedItem={selectedItem}
           />

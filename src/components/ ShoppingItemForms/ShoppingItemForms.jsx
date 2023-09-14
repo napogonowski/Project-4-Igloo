@@ -2,7 +2,12 @@ import { useState } from "react";
 import * as shoppingService from "../../utilities/shopping-service";
 import AddShoppingItemForm from "../AddShoppingItemForm/AddShoppingItemForm";
 import EditShoppingItemForm from "../EditShoppingItemForm/EditShoppingItemForm";
-export default function ShoppingItemForms({ isEditing, selectedItem }) {
+export default function ShoppingItemForms({
+  isEditing,
+  selectedItem,
+  onSaved,
+  onAdd,
+}) {
   const [formData, setFormData] = useState({
     name: "",
     qty: "",
@@ -17,6 +22,7 @@ export default function ShoppingItemForms({ isEditing, selectedItem }) {
     e.preventDefault();
     try {
       const newItem = await shoppingService.createItem(formData);
+      onAdd(newItem);
       setFormData({
         name: "",
         qty: "",
@@ -30,7 +36,10 @@ export default function ShoppingItemForms({ isEditing, selectedItem }) {
       <div className="">
         <div className="">
           {isEditing ? (
-            <EditShoppingItemForm selectedItem={selectedItem} />
+            <EditShoppingItemForm
+              selectedItem={selectedItem}
+              onSaved={onSaved}
+            />
           ) : (
             <AddShoppingItemForm
               formData={formData}

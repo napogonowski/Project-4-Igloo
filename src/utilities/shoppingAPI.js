@@ -10,7 +10,7 @@ export async function updateItem(editItem) {
 export async function deleteAllItems(user) {
   const userId = user._id;
   // console.log("send request ", userId)
-  return sendRequest(`${BASE_URL}/${userId}, "DELETE" `);
+  return sendRequest(`${BASE_URL}/all`, "DELETE");
 }
 
 export async function deleteItem(selectedId) {

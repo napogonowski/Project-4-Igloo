@@ -110,7 +110,7 @@ export default function EditItemForm({ selectedItem, onSaved }) {
           <Button
             onClick={_handleSubmit}
             type="submit"
-            clasName="m-5 text-lg font-bold tracking-wider "
+            className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
           >
             Submit
           </Button>

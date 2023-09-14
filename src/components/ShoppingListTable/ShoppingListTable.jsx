@@ -2,7 +2,7 @@ import * as shoppingService from "../../utilities/shopping-service";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-
+import { Hash, Trash2, MoreHorizontal } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -11,14 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-export default function ShoppingListTable({
-  shoppingItems,
-  setShoppingItems,
-  // toggleEdit,
-  // selectedId,
-}) {
-  const navigate = useNavigate();
-
+export default function ShoppingListTable({ shoppingItems, setShoppingItems }) {
   async function _handleDelete(selectedId) {
     console.log("page function", selectedId);
     const newItemList = await shoppingService.deleteItem(selectedId);
@@ -27,17 +20,17 @@ export default function ShoppingListTable({
 
   return (
     <>
-      <div className="background-blur bg-white/50 p-10 m-5">
+      <div className="background-blur bg-white/50 p-10  text-left">
         <Table>
           <TableHeader className="">
             <TableRow className="bg-cyan-500 text-white rounded-3xl">
-              <TableHead className="text-white text-base tracking-wide">
-                Item Number
+              <TableHead className="text-white text-base tracking-wide ">
+                <Hash />
               </TableHead>
               <TableHead className="text-white text-base tracking-wide">
                 Name
               </TableHead>
-              <TableHead className="text-white text-base tracking-wide">
+              <TableHead className="text-white text-base tracking-wide ">
                 Quantity
               </TableHead>
               <TableHead></TableHead>
@@ -59,7 +52,7 @@ export default function ShoppingListTable({
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button className="text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5">
-                        ...
+                        <MoreHorizontal />
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-50 item-center">
@@ -82,7 +75,7 @@ export default function ShoppingListTable({
                               onClick={() => _handleDelete(item._id)}
                               className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5"
                             >
-                              X
+                              <Trash2 />
                             </Button>
                           </div>
                         </div>

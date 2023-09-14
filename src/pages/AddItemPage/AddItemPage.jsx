@@ -1,7 +1,7 @@
 import * as usersService from "../../utilities/users-service";
 import * as itemsService from "../../utilities/items-service";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ItemForm from "../../components/ItemForm/ItemForm";
 import { Button } from "../../components/ui/button";
 import {
@@ -21,12 +21,14 @@ const initialItem = {
 export default function AddItemPage({ user }) {
   const [formData, setFormData] = useState([]);
   const [formFieldCount, setFormFieldCount] = useState(1);
+  const navigate = useNavigate();
 
   async function _handleSubmit(e) {
     e.preventDefault();
     try {
       console.log("Item form JSX Page ", formData);
       const newItem = await itemsService.createItem(formData);
+      navigate("/fridge");
       console.log(newItem, formData);
     } catch (error) {
       console.log("Error creating Item (JSX FORM PAGE)", e);

@@ -1,6 +1,7 @@
 import * as userService from "../../utilities/users-service";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { Refrigerator, ScrollText, PlusSquare, ArrowLeft } from "lucide-react";
 export default function ShoppingSideBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
@@ -29,42 +30,15 @@ export default function ShoppingSideBar({ user, setUser }) {
             <div className="space-y-1 ">
               <Link to="/fridge">
                 <Button className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mr-2 h-4 w-4"
-                  >
-                    <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12" />
-                    <circle cx="17" cy="7" r="5" />
-                  </svg>
-                  Fridge
+                  <Refrigerator />
+                  &nbsp; Home
                 </Button>
               </Link>
               <Button
                 onClick={handleLogOut}
                 className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="mr-2 h-4 w-4"
-                >
-                  <path d="m16 6 4 14" />
-                  <path d="M12 6v14" />
-                  <path d="M8 8v12" />
-                  <path d="M4 4v16" />
-                </svg>
-                Log out
+                <ArrowLeft /> &nbsp; Log out
               </Button>
             </div>
           </div>

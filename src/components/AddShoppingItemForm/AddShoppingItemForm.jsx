@@ -11,7 +11,7 @@ export default function AddShoppingItemForm({
   return (
     <>
       <div className="grid grid-cols-5">
-        <div className="col-start-3 ">
+        <div className="col-start-2 ml-20 ">
           <form autoComplete="off" onSubmit={_handleSubmit}>
             <Card className=" background-blur bg-white/50 rounded-3xl p-10 m-5 w-[500px]">
               <CardHeader>

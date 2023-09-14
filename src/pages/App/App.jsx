@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/fridge/new" element={<AddItemPage user={user} />} />
             <Route
               path="/shoppinglist"
-              element={<ShoppingListPage user={user} />}
+              element={<ShoppingListPage user={user} setUser={setUser} />}
             />
             <Route path="/*" element={<Navigate to="/fridge" />} />
           </Routes>
