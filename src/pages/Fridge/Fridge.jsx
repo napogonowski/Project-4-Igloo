@@ -58,6 +58,7 @@ export default function Fridge({ user, setUser }) {
       </div>
       <div className="bg-green-500 col-start-6 col-span-2 grid">
         <ItemDetails
+        
           goingToExpire={goingToExpire}
           userItem={userItems}
           setUserItem={setUserItems}

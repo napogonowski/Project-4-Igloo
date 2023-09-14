@@ -1,4 +1,4 @@
-import * as shoppingService from "../../utilities/shopping-service"
+import * as shoppingService from "../../utilities/shopping-service";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
@@ -28,13 +28,10 @@ export default function EditShoppingItemForm({ selectedItem }) {
 
   async function _handleSubmit(e) {
     e.preventDefault();
-    try{
+    try {
       const updatedItem = await shoppingService.updateItem(editItem);
       // onSaved(updatedItem);
-
-    } catch (error) {
-
-    }
+    } catch (error) {}
     navigate("/shoppinglist");
   }
 

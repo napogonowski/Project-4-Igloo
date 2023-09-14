@@ -10,12 +10,11 @@ import {
 } from "../../components/ui/tabs";
 
 export default function AuthPage({ setUser }) {
-  const [showSignUp, setShowSignUp] = useState(false);
   return (
-    <main className=" flex items-center flex-col mt-10">
-      <div className=" align-center">
-        <Tabs defaultValue="logIn" className="w-[500px] items-center">
-          <TabsList className="grid  grid-cols-2 mb-10">
+    <main className=" grid grid-cols-3 mt-10">
+      <div className=" col-start-2 align-center">
+        <Tabs defaultValue="logIn" className="w-[450px] items-center ml-10">
+          <TabsList className="grid  ml-20 grid-cols-2 mb-10">
             <TabsTrigger value="logIn">Log In</TabsTrigger>
             <TabsTrigger value="signUp">Sign Up</TabsTrigger>
           </TabsList>

@@ -8,7 +8,10 @@ export default function FridgeItems({ userItems, goingToExpire }) {
     <>
       <div className="mt-10 grid grid-cols-3 gap-5">
         {userItems.map((item) => (
-          <Card key={item._id} className="rounded-3xl border-4 border-cyan-400">
+          <Card
+            key={item._id}
+            className=" rounded-3xl background-blur bg-white/50  border-8 border-cyan-400"
+          >
             <CardHeader>
               <CardTitle className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
                 {item.name}
@@ -19,13 +22,12 @@ export default function FridgeItems({ userItems, goingToExpire }) {
                 <span className="text-base font-bold">Quantity: </span>
                 <span className="text-xl">{item.qty}</span>
               </p>
-              <p className="text-base font-bold">Expires on: </p>
               <div
-                className=" m-10 rounded-3xl "
+                className=" rounded-3xl "
                 style={{
                   backgroundColor:
                     goingToExpire(item.expDate) > 3
-                      ? "rgba(90, 222, 15, 0.6)"
+                      ? "rgba(90, 222, 15, 0.8)"
                       : goingToExpire(item.expDate) > 0
                       ? "rgba(255, 195, 0, 0.81)"
                       : "rgba(255, 0, 0, 0.81)",
@@ -36,7 +38,7 @@ export default function FridgeItems({ userItems, goingToExpire }) {
                 </p>
               </div>
             </CardContent>
-            <Button className="mb-5">
+            <Button className=" mb-5 mt-0text-base font-bold tracking-wider ">
               <Link to={`?selectedId=${item._id}`}>View Details</Link>
             </Button>
           </Card>

@@ -34,19 +34,20 @@ export default function LoginForm({ setUser }) {
   return (
     <>
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <Card className="mx-auto flex w-full flex-col justify-center space-y-6 w-1/3 sm:w-[500px] sm:h-[550px]">
+        <Card className="mx-auto flex w-full flex-col justify-center space-y-6 w-1/3 sm:w-[500px] sm:h-[550px] background-blur bg-white/50  ">
           <CardHeader>
             <CardTitle className="scroll-m-20 text-4xl font-bold tracking-wide lg:text-6xl mb-5">
               Login
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className=" items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Label className=" mb-3 ml-3 text-left scroll-m-20 text-xl font-semibold tracking-tight">
+            <div className=" items-center gap-4 mb-4 p-2 ">
+              <div className="flex flex-col space-y-1.5 ">
+                <Label className=" ml-3 text-left scroll-m-20 text-2xl font-semibold tracking-tight">
                   Email:
                 </Label>
                 <Input
+                  className="text-lg "
                   type="text"
                   name="email"
                   value={credentials.email}
@@ -56,10 +57,11 @@ export default function LoginForm({ setUser }) {
                 />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label className="mt-5 mb-3 ml-3 text-left scroll-m-20 text-xl font-semibold tracking-tight">
+                <Label className="mt-5 mb-3 ml-3 text-left scroll-m-20 text-2xl font-semibold tracking-tight">
                   Password:
                 </Label>
                 <Input
+                  className="text-lg"
                   type="password"
                   name="password"
                   value={credentials.password}
@@ -73,7 +75,7 @@ export default function LoginForm({ setUser }) {
             className=" m-5 text-xl tracking-wider font-bold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-4 hover:scale-110 hover:bg-orange-500 duration-300"
             type="submit"
           >
-            Log In
+            LOG IN
           </Button>
         </Card>
       </form>

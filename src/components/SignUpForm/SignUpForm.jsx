@@ -56,6 +56,7 @@ export default class SignUpForm extends Component {
                     Name
                   </Label>
                   <Input
+                    className="text-lg"
                     type="text"
                     name="name"
                     value={this.state.name}
@@ -68,6 +69,7 @@ export default class SignUpForm extends Component {
                     Email
                   </Label>
                   <Input
+                    className="text-lg"
                     type="email"
                     name="email"
                     value={this.state.email}
@@ -80,6 +82,7 @@ export default class SignUpForm extends Component {
                     Password
                   </Label>
                   <Input
+                    className="text-lg"
                     type="password"
                     name="password"
                     value={this.state.password}
@@ -92,6 +95,7 @@ export default class SignUpForm extends Component {
                     Confirm
                   </Label>
                   <Input
+                    className="text-lg"
                     type="password"
                     name="confirm"
                     value={this.state.confirm}

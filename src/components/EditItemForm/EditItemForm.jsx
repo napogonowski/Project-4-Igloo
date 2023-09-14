@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { parseISO } from "date-fns";
 import * as itemsService from "../../utilities/items-service";
 import { DatePicker } from "../ui/date-picker";
+import { Button } from "../../components/ui/button";
 
 export default function EditItemForm({ selectedItem, onSaved }) {
   const [editItem, setEditItem] = useState({
@@ -59,40 +60,62 @@ export default function EditItemForm({ selectedItem, onSaved }) {
 
   return (
     <>
-      <form onSubmit={_handleSubmit}>
-        <label>Name</label>
-        <input
-          name="name"
-          value={editItem.name}
-          onChange={_handleChange}
-          type="text"
-        />
-        <label htmlFor="">Quantity</label>
-        <input
-          name="qty"
-          value={editItem.qty}
-          onChange={_handleChange}
-          type="number"
-        />
-        <label htmlFor="">Expiry Date</label>
-        <DatePicker
-          date={editItem.expDate ? parseISO(editItem.expDate) : null}
-          onChange={(date) => _handleDateChange(date)}
-        />
-        <label> Storage: </label>
-        <select
-          name="fridge"
-          value={editItem.fridge}
-          onChange={_handleChangeFrozen}
-          id=""
+      <div className=" m-10 p-5 grid rounded-3xl background-blur bg-white/50 justify-center">
+        <form
+          onSubmit={_handleSubmit}
+          // className="rounded-3xl background-blur bg-white/50"
         >
-          <option value={true}>Fridge</option>
-          <option value={false}>Freezer </option>
-        </select>
-        <button onClick={_handleSubmit} type="submit">
-          Submit
-        </button>
-      </form>
+          <label className="scroll-m-20 mt-5 text-xl font-semibold tracking-wide">
+            Name:{" "}
+          </label>
+          <input
+            className="m-2 text-lg p-2 rounded-md"
+            name="name"
+            value={editItem.name}
+            onChange={_handleChange}
+            type="text"
+          />
+          <label className="scroll-m-20 mt-5 text-xl font-semibold tracking-wide">
+            Quantity:{" "}
+          </label>
+          <input
+            className="m-2 mb-5 text-lg p-2 rounded-md"
+            name="qty"
+            value={editItem.qty}
+            onChange={_handleChange}
+            type="number"
+          />
+          <label className="scroll-m-20  mt-5 text-xl font-semibold tracking-wide">
+            Expiry Date:{" "}
+          </label>
+          <DatePicker
+            className=""
+            date={editItem.expDate ? parseISO(editItem.expDate) : null}
+            onChange={(date) => _handleDateChange(date)}
+          />
+          <label className="scroll-m-20  mt-5 text-xl font-semibold tracking-wide">
+            {" "}
+            Storage:{" "}
+          </label>
+          <select
+            className="m-2 rounded-md "
+            name="fridge"
+            value={editItem.fridge}
+            onChange={_handleChangeFrozen}
+            id=""
+          >
+            <option value={true}>Fridge</option>
+            <option value={false}>Freezer </option>
+          </select>
+          <Button
+            onClick={_handleSubmit}
+            type="submit"
+            clasName="m-5 text-lg font-bold tracking-wider "
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
     </>
   );
 }

@@ -66,8 +66,8 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
       {isEditing ? (
         <EditItemForm selectedItem={selectedItem} onSaved={handleSaved} />
       ) : (
-        // is in own component ?  
-        <div className="m-5 p-10">
+        // is in own component ?
+        <div className="m-5 p-10 background-blur bg-white/50 rounded-3xl ">
           <h3 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             {selectedItem.name}
           </h3>
@@ -84,14 +84,25 @@ export default function ItemDetails({ userItem, setUserItem, goingToExpire }) {
                 </TableCell>
               </TableRow>
             </TableBody>
-            <Button onClick={toggleEdit} className="m-5">
-              EDIT
-            </Button>
-            <Button onClick={() => _handleItemTransfer(selectedItem)}>
-              Add To Shopping List{" "}
-            </Button>
-            <Button onClick={() => _handleDelete(selectedId)}>DELETE</Button>
           </Table>
+          <Button
+            onClick={toggleEdit}
+            className="m-5 text-base font-bold tracking-wider "
+          >
+            EDIT
+          </Button>
+          <Button
+            onClick={() => _handleItemTransfer(selectedItem)}
+            className="m-5 text-base font-bold tracking-wider"
+          >
+            Tranfer Item
+          </Button>
+          <Button
+            onClick={() => _handleDelete(selectedId)}
+            className="m-5 text-base font-bold tracking-wider "
+          >
+            DELETE
+          </Button>
         </div>
       )}
     </>

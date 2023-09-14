@@ -3,7 +3,7 @@ const BASE_URL = "/api/shoppingListItem";
 
 export async function updateItem(editItem) {
   const itemId = editItem._id;
-  console.log("send request post ", itemId)
+  console.log("send request post ", itemId);
   return sendRequest(`${BASE_URL}/${itemId}`, "PUT", editItem);
 }
 
