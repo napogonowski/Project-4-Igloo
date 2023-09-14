@@ -6,7 +6,25 @@ module.exports = {
   show,
   delete: deleteItem,
   deleteAll,
+  update,
 };
+
+async function update(req, res) {
+  try {
+    const itemId = req.params.id;
+    console.log("controller function ", itemId);
+    const updatedItem = await ShoppingListItem.findByIdAndUpdate(
+      itemId,
+      req.body,
+      {
+        new: true,
+      }
+    );
+    res.json(updatedItem);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+}
 
 async function deleteAll(req, res) {
   try {

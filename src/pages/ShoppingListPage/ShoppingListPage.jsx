@@ -9,7 +9,7 @@ import "./ShoppingListPage.css";
 
 export default function ShoppingListPage({ user }) {
   const [shoppingItems, setShoppingItems] = useState([]);
-  const [isEditing, setIsEditing] = useState(true);
+  // const [isEditing, setIsEditing] = useState(true);
   const [selectedItem, setSelectedItem] = useState({});
   const [searchParams] = useSearchParams();
   const selectedId = searchParams.get("selectedId");
@@ -20,18 +20,17 @@ export default function ShoppingListPage({ user }) {
       setSelectedItem(item);
     } catch (error) {}
   }
-  function toggleEdit() {
-    setIsEditing(!isEditing);
+  // function toggleEdit() {
+  //   setIsEditing(!isEditing);
+  // }
+
+  function _handleExport() {
+    alert(`Your Shopping List has been Exported to: \n ${user.email}`);
   }
 
-  function _handleExport(){
-    alert(`Your Shopping List has been Exported to: \n ${user.email}` )
-  }
-
-  async function deleteAllItems(user){
-    console.log(user)
-    const aftermath = await shoppingService.deleteAllItems(user)
-
+  async function deleteAllItems(user) {
+    console.log(user);
+    const aftermath = await shoppingService.deleteAllItems(user);
   }
   async function getUserShoppingItems({ user }) {
     try {
@@ -45,6 +44,10 @@ export default function ShoppingListPage({ user }) {
     getUserShoppingItems({ user });
   }, []);
 
+  useEffect(() => {
+    getOneItem(selectedId);
+  }, [selectedId]);
+
   return (
     <>
       <main className="shoppingList grid grid-cols-6  grid-rows-3	gap-4	">
@@ -53,8 +56,7 @@ export default function ShoppingListPage({ user }) {
         </aside>
         <div className="tabledContent col-start-3 col-span-4 row-start-1  bg-blue-500">
           <ShoppingItemForms
-            toggleEdit={toggleEdit}
-            isEditing={isEditing}
+            isEditing={!!selectedId}
             selectedItem={selectedItem}
           />
         </div>
@@ -65,7 +67,7 @@ export default function ShoppingListPage({ user }) {
             selectedId={selectedId}
             shoppingItems={shoppingItems}
             setShoppingItems={setShoppingItems}
-            toggleEdit={toggleEdit}
+            // toggleEdit={toggleEdit}
           />
         </div>
       </main>

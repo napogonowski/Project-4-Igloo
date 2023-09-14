@@ -1,10 +1,16 @@
 import sendRequest from "./send-request";
 const BASE_URL = "/api/shoppingListItem";
 
-export async function deleteAllItems(user){
-  const userId = user._id
+export async function updateItem(editItem) {
+  const itemId = editItem._id;
+  console.log("send request post ", itemId)
+  return sendRequest(`${BASE_URL}/${itemId}`, "PUT", editItem);
+}
+
+export async function deleteAllItems(user) {
+  const userId = user._id;
   // console.log("send request ", userId)
-  return sendRequest(`${BASE_URL}/${userId}, "DELETE" `)
+  return sendRequest(`${BASE_URL}/${userId}, "DELETE" `);
 }
 
 export async function deleteItem(selectedId) {

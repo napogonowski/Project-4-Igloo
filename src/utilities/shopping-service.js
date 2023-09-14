@@ -1,5 +1,10 @@
 import * as shoppingAPI from "./shoppingAPI";
 
+export async function updateItem(editItem) {
+  const res = await shoppingAPI.updateItem(editItem);
+  return res;
+}
+
 export async function deleteAllItems(user) {
   // console.log("SERVICE", user)
   const res = await shoppingAPI.deleteAllItems(user);

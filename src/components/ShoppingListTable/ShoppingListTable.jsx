@@ -1,7 +1,8 @@
 import * as shoppingService from "../../utilities/shopping-service";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+
 import {
   Table,
   TableBody,
@@ -13,14 +14,20 @@ import {
 export default function ShoppingListTable({
   shoppingItems,
   setShoppingItems,
-  toggleEdit,
-  selectedId,
+  // toggleEdit,
+  // selectedId,
 }) {
+  const navigate = useNavigate();
+
   async function _handleDelete(selectedId) {
-    console.log("page function", selectedId)
+    console.log("page function", selectedId);
     const newItemList = await shoppingService.deleteItem(selectedId);
     setShoppingItems(newItemList);
   }
+  // function _handleLink(item){
+  //   navigate(`/shoppinglist?{item}`)
+  //   toggleEdit();
+  // }
 
   return (
     <>
@@ -53,7 +60,7 @@ export default function ShoppingListTable({
                         <div className="grid gap-2">
                           <div className="grid grid-cols-3 items-center gap-4">
                             <Link to={`?selectedId=${item._id}`}>
-                              <Button onClick={toggleEdit}>EDIT</Button>
+                              <Button>EDIT</Button>
                             </Link>
                           </div>
                           <div className="grid grid-cols-3 items-center gap-4">

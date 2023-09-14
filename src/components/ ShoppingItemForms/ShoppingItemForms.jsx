@@ -2,7 +2,7 @@ import { useState } from "react";
 import * as shoppingService from "../../utilities/shopping-service";
 import AddShoppingItemForm from "../AddShoppingItemForm/AddShoppingItemForm";
 import EditShoppingItemForm from "../EditShoppingItemForm/EditShoppingItemForm";
-export default function ShoppingItemForms({isEditing, toggleEdit, selectedItem}) {
+export default function ShoppingItemForms({ isEditing, selectedItem }) {
   const [formData, setFormData] = useState({
     name: "",
     qty: "",
@@ -28,7 +28,7 @@ export default function ShoppingItemForms({isEditing, toggleEdit, selectedItem})
   return (
     <>
       {isEditing ? (
-        <EditShoppingItemForm selectedItem={selectedItem} toggleEdit={toggleEdit} />
+        <EditShoppingItemForm selectedItem={selectedItem} />
       ) : (
         <AddShoppingItemForm
           formData={formData}
