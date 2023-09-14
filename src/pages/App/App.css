@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  /* background-color: red; */
+  background-image: url("https://i.imgur.com/WOt93Pj.jpg?1") ;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding: 0; 
+   
 }
 
 .App-logo {

@@ -21,7 +21,7 @@ export default function ShoppingListPage({ user, setUser }) {
   }
 
   function _handleExport() {
-    alert(`Your Shopping List has been Exported to: \n ${user.email}`);
+    alert(`Your Shopping List has been sent to: \n ${user.email}`);
   }
 
   async function deleteAllItems(user) {
@@ -66,11 +66,11 @@ export default function ShoppingListPage({ user, setUser }) {
 
   return (
     <>
-      <main className="shoppingList grid grid-cols-6  grid-rows-3	gap-4	">
-        <aside className="bg-red-500 col-start-1  col-span-2 row-span-3 rounded-2xl">
+      <main className="shoppingList grid grid-cols-6  grid-rows-2	gap-4	">
+        <aside className="col-start-1  col-span-2 row-span-3 rounded-2xl">
           <ShoppingSideBar user={user} setUser={setUser} />
         </aside>
-        <div className="tabledContent col-start-3 col-span-4 row-start-1  bg-blue-500">
+        <div className="tabledContent col-start-3 col-span-4 row-start-1">
           <ShoppingItemForms
             onAdd={_handleAdd}
             onSaved={_handleSaved}
@@ -78,7 +78,7 @@ export default function ShoppingListPage({ user, setUser }) {
             selectedItem={selectedItem}
           />
         </div>
-        <div className="tabledContent col-start-3 col-span-4 row-start-2  row-span-2 bg-green-500">
+        <div className="tabledContent col-start-3 col-span-4 row-start-2  row-span-2">
           <Button
             onClick={_handleExport}
             className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"

@@ -43,16 +43,16 @@ export default class SignUpForm extends Component {
     return (
       <>
         <form className="" autoComplete="off" onSubmit={this.handleSubmit}>
-          <Card className="mx-auto flex w-full flex-col justify-center space-y-6">
+          <Card className=" w-[500px] flex flex-col justify-center space-y-6 background-blur bg-white/50">
             <CardHeader>
-              <CardTitle className="text-5xl font-bold tracking-wide lg:text-6xl">
+              <CardTitle className="text-4xl font-bold tracking-wide lg:text-6xl">
                 Sign Up
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid w-full  gap-4">
+              <div className="">
                 <div className="flex flex-col space-y-1.5">
-                  <Label className=" mb-3 ml-3 text-left scroll-m-20 text-lg font-semibold tracking-tight">
+                  <Label className=" mb-3 ml-3 text-left  text-lg font-semibold tracking-tight">
                     Name
                   </Label>
                   <Input
@@ -106,7 +106,7 @@ export default class SignUpForm extends Component {
               </div>
             </CardContent>
             <Button
-              className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2 mb-5"
+              className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center mr-2"
               type="submit"
               disabled={disable}
             >

@@ -34,7 +34,7 @@ export default function LoginForm({ setUser }) {
   return (
     <>
       <form autoComplete="off" onSubmit={handleSubmit}>
-        <Card className=" w-full flex flex-col justify-center space-y-6 background-blur bg-white/50">
+        <Card className=" w-[500px] flex flex-col justify-center space-y-6 background-blur bg-white/50">
           <CardHeader>
             <CardTitle className="scroll-m-20 text-4xl font-bold tracking-wide lg:text-6xl mb-5">
               Login

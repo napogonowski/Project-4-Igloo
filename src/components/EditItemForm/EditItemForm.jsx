@@ -61,15 +61,12 @@ export default function EditItemForm({ selectedItem, onSaved }) {
   return (
     <>
       <div className=" m-10 p-5 grid rounded-3xl background-blur bg-white/50 justify-center">
-        <form
-          onSubmit={_handleSubmit}
-          // className="rounded-3xl background-blur bg-white/50"
-        >
+        <form onSubmit={_handleSubmit}>
           <label className="scroll-m-20 mt-5 text-xl font-semibold tracking-wide">
             Name:{" "}
           </label>
           <input
-            className="m-2 text-lg p-2 rounded-md"
+            className="m-2 text-lg p-2 h-1/3 rounded-md"
             name="name"
             value={editItem.name}
             onChange={_handleChange}
@@ -79,7 +76,7 @@ export default function EditItemForm({ selectedItem, onSaved }) {
             Quantity:{" "}
           </label>
           <input
-            className="m-2 mb-5 text-lg p-2 rounded-md"
+            className="m-2  text-lg p-4 h-1 rounded-md"
             name="qty"
             value={editItem.qty}
             onChange={_handleChange}
@@ -98,7 +95,7 @@ export default function EditItemForm({ selectedItem, onSaved }) {
             Storage:{" "}
           </label>
           <select
-            className="m-2 rounded-md "
+            className="m-2 h-1/3 rounded-md "
             name="fridge"
             value={editItem.fridge}
             onChange={_handleChangeFrozen}
@@ -110,7 +107,7 @@ export default function EditItemForm({ selectedItem, onSaved }) {
           <Button
             onClick={_handleSubmit}
             type="submit"
-            className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
+            className="w-full col-span-2 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center "
           >
             Submit
           </Button>

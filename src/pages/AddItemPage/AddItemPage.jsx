@@ -37,8 +37,8 @@ export default function AddItemPage({ user }) {
 
   return (
     <>
-      <div className=" grid grid-cols-3 grid-rows-5 mt-10">
-        <div className="col-start-1  mr-[-20]">
+      <div className=" grid grid-cols-3 grid-rows-2">
+        <div className="col-start-1">
           <div className="mt-10">
             <Link to="/fridge">
               <Button className="w-1/2 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5">
@@ -66,9 +66,9 @@ export default function AddItemPage({ user }) {
           autoComplete="off"
           onSubmit={_handleSubmit}
         >
-          <Card className="border-4	 mx-auto flex w-full flex-col justify-center space-y-6 w-1/3 sm:w-[550px]  shadow-blue-500/50 ">
+          <Card className="border-4	mt-10 flex w-full flex-col justify-center space-y-6 w-1/3 w-[550px] background-blur bg-white/50 ">
             <CardHeader>
-              <CardTitle className="scroll-m-20 pb-2 text-4xl font-semibold tracking-tight transition-colors first:mt-0">
+              <CardTitle className="scroll-m-20 pb-2 text-5xl font-semibold tracking-tight  first:mt-0">
                 Add New Item
               </CardTitle>
             </CardHeader>
@@ -89,7 +89,7 @@ export default function AddItemPage({ user }) {
                   }}
                 />
               ))}
-            </div>
+          </div>
           </Card>
           <Button
             className="w-full text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-10"

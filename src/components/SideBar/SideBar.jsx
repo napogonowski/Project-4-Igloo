@@ -46,7 +46,6 @@ export default function SideBar({ user, setUser }) {
             >
               <ArrowLeft /> &nbsp; Log out
             </Button>
-            
           </div>
         </div>
       </div>
