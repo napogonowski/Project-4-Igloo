@@ -8,7 +8,29 @@ With the rising cost in living, a quick grocery trip is costing an arm and leg. 
 
 Say goodbye to wasted food and hello to a more organised and efficient fridge. Say hello to Igloo.
 
-## APP Screen Shots
+## App Screenshots
+
+### Log In Page:
+
+Also toggles to be the sign in page via clicking the tabs above the form:
+
+![Imgur](https://i.imgur.com/nYl827o.jpg)
+
+### Fridge:
+
+This the main page for the user. Here users can catalogue their groceries, edit, delete and transfer them to their shopping list.
+
+![Imgur](https://i.imgur.com/UhGNS07.png)
+
+### Add New Fridge Item Page:
+
+![Imgur](https://i.imgur.com/cuvqbiA.jpg)
+
+### Shopping List Page:
+
+Another organisation page for users to keep track of what gone off in their fridge, and while its front of mind, add it to a grocery list:
+
+![Imgur](https://i.imgur.com/X3r8f9D.jpg)
 
 ## Techonologies Used
 
@@ -23,7 +45,12 @@ Say goodbye to wasted food and hello to a more organised and efficient fridge. S
 
 ## Getting Started
 
-Sign up with a legitimate email, then enjoy all the igloo has to offer
+Sign up with a legitimate email, then enjoy all the igloo has to offer:
+
+Sign up below:
+https://git.heroku.com/project4igloo.git
+
+(Unsuccessfull deloyment, will be corrected)
 
 ## Reflections
 
