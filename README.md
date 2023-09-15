@@ -64,6 +64,8 @@ Who would of thought a week would go by so fast. Although im proud of what i was
 
 1. Doing more with Freezer time: My inital plans was to have alot more functionality around whether or not your items were placed in the fridge or freezer. One of these was to add 2 months to the user inputted time, to give them a better estimation of when their food will go bad.
 
-2. Nutrition API: One of my icebox features was to include nurtition data to the user on the food they catalogue. Unfortunately i ran out of time and was unable to achieve this.
+2. More Specific Quantities: Not all foods can be measured the same. If i had more time i would of liked to spend some time researching how to provide a clearer values for quantity depending on food type. Given the time for this project, it wasn't viable invest time for this model design.
 
-3. Info Page: Another icebox feature was to include a page with artciles about food preservation and storing , as well as information about how best to utilise food.
+3. Nutrition API: One of my icebox features was to include nurtition data to the user on the food they catalogue. Unfortunately i ran out of time and was unable to achieve this.
+
+4. . Info Page: Another icebox feature was to include a page with artciles about food preservation and storing , as well as information about how best to utilise food.
