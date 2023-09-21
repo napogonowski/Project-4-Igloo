@@ -12,12 +12,11 @@ const initialItem = {
   fridge: true,
 };
 
-export default function AddItemPage({ user }) {
+export default function AddItemPage({}) {
   const [formData, setFormData] = useState([]);
   const [formFieldCount, setFormFieldCount] = useState(1);
   const navigate = useNavigate();
 
-  // Still figure out
   async function _handleSubmit(e) {
     e.preventDefault();
     try {
