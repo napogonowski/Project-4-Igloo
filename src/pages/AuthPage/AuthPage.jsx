@@ -10,7 +10,7 @@ import {
 
 export default function AuthPage({ setUser }) {
   return (
-    <main className=" grid grid-cols-6 grid-rows-2 flex ">
+    <main className=" grid grid-cols-6 flex ">
       <div className="col-start-2 cols-span-2 content-center mt-20 ">
         <h1 className="scroll-m-20 text-9xl font-extrabold tracking-widest text-white mt-20">
           IGLOO

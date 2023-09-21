@@ -36,7 +36,7 @@ export default function Fridge({ user, setUser }) {
   }
 
   return (
-    <main className="grid grid-cols-7 grid-rows-2 gap-4">
+    <main className="grid grid-cols-7 gap-4">
       <div className="col-start-1 col-span-2 rounded-2xl">
         <SideBar user={user} setUser={setUser} />
       </div>
