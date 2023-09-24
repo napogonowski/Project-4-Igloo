@@ -6,7 +6,7 @@ const logger = require("morgan");
 // Always require and configure near the top
 require("dotenv").config();
 // Connect to the database
-require("./config/database");
+require("../config/database");
 
 const app = express();
 
@@ -20,18 +20,18 @@ app.use(express.static(path.join(__dirname, "build")));
 
 // middleware 2 check + verify a JWT & assign the user obj from the JW -
 // 2 req.user
-app.use(require("./config/checkToken"));
+app.use(require("../config/checkToken"));
 const port = process.env.PORT || 3001;
 
 // Put API routes here, before the "catch all" route
-app.use("/api/users", require("./routes/api/users"));
-const ensureLoggedIn = require("./config/ensureLoggedIn");
+app.use("/api/users", require("../routes/api/users"));
+const ensureLoggedIn = require("../config/ensureLoggedIn");
 // app.use("/api/items", require("./routes/api/items"));
-app.use("/api/items", ensureLoggedIn, require("./routes/api/items"));
+app.use("/api/items", ensureLoggedIn, require("../routes/api/items"));
 app.use(
   "/api/shoppingListItem",
   ensureLoggedIn,
-  require("./routes/api/shoppingListItem")
+  require("../routes/api/shoppingListItem")
 );
 
 // The following "catch all" route (note the *) is necessary
