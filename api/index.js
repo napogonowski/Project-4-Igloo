@@ -15,8 +15,8 @@ app.use(express.json());
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
-app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
-app.use(express.static(path.join(__dirname, "build")));
+app.use(favicon(path.join(__dirname, "../build", "favicon.ico")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 // middleware 2 check + verify a JWT & assign the user obj from the JW -
 // 2 req.user
@@ -37,7 +37,7 @@ app.use(
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 app.listen(port, function () {
