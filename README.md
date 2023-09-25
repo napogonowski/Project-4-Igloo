@@ -47,7 +47,9 @@ Another organisation page for users to keep track of what gone off in their frid
 
 ## Getting Started
 
-Once Deloyed, Sign up with a legitimate email, then enjoy all the igloo has to offer:
+Igloo is deployed at Vercel @ https://project-4-igloo.vercel.app 
+
+new users can create accounts with any valid email. 
 
 
 ## Reflections
