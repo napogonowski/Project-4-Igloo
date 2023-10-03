@@ -63,7 +63,7 @@ export default function ItemDetails({ setUserItem, goingToExpire }) {
         <EditItemForm selectedItem={selectedItem} onSaved={_handleSaved} />
       ) : (
         // is in own component ?
-        <div className="m-5 p-10 background-blur bg-white/50 rounded-3xl ">
+        <div className="m-5 p-10 bg-white/50 rounded-3xl ">
           <h3 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             {selectedItem.name}
           </h3>

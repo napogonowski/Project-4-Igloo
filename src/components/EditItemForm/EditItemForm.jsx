@@ -60,7 +60,7 @@ export default function EditItemForm({ selectedItem, onSaved }) {
 
   return (
     <>
-      <div className=" m-10 p-5 grid rounded-3xl background-blur bg-white/50 justify-center">
+      <div className=" m-10 p-5 grid rounded-3xl bg-white/50 justify-center">
         <form onSubmit={_handleSubmit}>
           <label className="scroll-m-20 mt-5 text-xl font-semibold tracking-wide">
             Name:{" "}

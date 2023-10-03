@@ -33,22 +33,15 @@ export default function ShoppingItemForms({
   }
   return (
     <>
-      <div>
-        <div>
-          {isEditing ? (
-            <EditShoppingItemForm
-              selectedItem={selectedItem}
-              onSaved={onSaved}
-            />
-          ) : (
-            <AddShoppingItemForm
-              formData={formData}
-              _handleChange={_handleChange}
-              _handleSubmit={_handleSubmit}
-            />
-          )}
-        </div>
-      </div>
+      {isEditing ? (
+        <EditShoppingItemForm selectedItem={selectedItem} onSaved={onSaved} />
+      ) : (
+        <AddShoppingItemForm
+          formData={formData}
+          _handleChange={_handleChange}
+          _handleSubmit={_handleSubmit}
+        />
+      )}
     </>
   );
 }

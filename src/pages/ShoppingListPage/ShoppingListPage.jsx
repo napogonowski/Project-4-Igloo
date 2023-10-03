@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "../../components/ui/button";
+import { AlignJustify } from "lucide-react";
 import * as shoppingService from "../../utilities/shopping-service";
 import ShoppingListTable from "../../components/ShoppingListTable/ShoppingListTable";
 import ShoppingSideBar from "../../components/SideBar/ShoppingSideBar";
@@ -56,40 +57,55 @@ export default function ShoppingListPage({ user, setUser }) {
     getOneItem(selectedId);
   }, [selectedId]);
 
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <>
-      <main className="shoppingList grid grid-cols-6  grid-rows-2	gap-4	">
-        <aside className="col-start-1  col-span-2 row-span-3 rounded-2xl">
+      <Button
+        className="block lg:hidden bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center"
+        onClick={() => setOpen(!isOpen)}
+      >
+        <AlignJustify />
+      </Button>
+
+      <div className="flex">
+        <div
+          className={`max-w-[500px] flex-1 rounded-2xl fixed lg:static mt-10 lg:mt-0 transition-[margin-left] ease-in-out duration-500 ${
+            isOpen ? "ml-0" : "ml-[-500px] lg:ml-0"
+          }`}
+        >
           <ShoppingSideBar user={user} setUser={setUser} />
-        </aside>
-        <div className="tabledContent col-start-3 col-span-4 row-start-1">
-          <ShoppingItemForms
-            onAdd={_handleAdd}
-            onSaved={_handleSaved}
-            isEditing={!!selectedId}
-            selectedItem={selectedItem}
-          />
         </div>
-        <div className="tabledContent col-start-3 col-span-4 row-start-2 row-span-2">
-          <Button
-            onClick={_handleExport}
-            className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
-          >
-            Export List{" "}
-          </Button>
-          <Button
-            onClick={() => deleteAllItems(user)}
-            className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
-          >
-            Clear ALL
-          </Button>
-          <ShoppingListTable
-            selectedId={selectedId}
-            shoppingItems={shoppingItems}
-            setShoppingItems={setShoppingItems}
-          />
-        </div>
-      </main>
+        <main className="grid lg:grid-rows-2 lg:grid-cols-2 gap-4	content-center flex-1">
+          <div className="lg:row-start-1 lg:col-start-1 lg:col-end-2">
+            <ShoppingItemForms
+              onAdd={_handleAdd}
+              onSaved={_handleSaved}
+              isEditing={!!selectedId}
+              selectedItem={selectedItem}
+            />
+          </div>
+          <div className="lg:row-start-2 lg:col-span-2 row-span-2">
+            <Button
+              onClick={_handleExport}
+              className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
+            >
+              Export List{" "}
+            </Button>
+            <Button
+              onClick={() => deleteAllItems(user)}
+              className="w-1/3 text-white text-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-center m-5"
+            >
+              Clear ALL
+            </Button>
+            <ShoppingListTable
+              selectedId={selectedId}
+              shoppingItems={shoppingItems}
+              setShoppingItems={setShoppingItems}
+            />
+          </div>
+        </main>
+      </div>
     </>
   );
 }

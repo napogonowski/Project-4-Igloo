@@ -19,7 +19,7 @@ export default function ShoppingListTable({ shoppingItems, setShoppingItems }) {
 
   return (
     <>
-      <div className="background-blur bg-white/50 p-10 text-left rounded-xl m-10">
+      <div className="border-4  bg-white/50 p-10 text-left rounded-xl m-10">
         <Table>
           <TableHeader className="">
             <TableRow className="bg-cyan-500 text-white rounded-3xl">

@@ -2,7 +2,7 @@ import * as userService from "../../utilities/users-service";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Refrigerator, ArrowLeft } from "lucide-react";
-export default function ShoppingSideBar({ user, setUser }) {
+export default function AddItemSideBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -14,7 +14,6 @@ export default function ShoppingSideBar({ user, setUser }) {
           <h2 className="scroll-m-20 text-4xl font-extrabold tracking-widest lg:text-5xl mb-10">
             IGLOO
           </h2>
-          <h2 className="mb-10 px-4 text-2xl tracking-wide ">Shopping List</h2>
           <div className="space-y-1">
             <h2 className="scroll-m-20 border-b pb-2 text-4xl font-semibold tracking-tight transition-colors first:mt-0">
               Welcome {user.name}

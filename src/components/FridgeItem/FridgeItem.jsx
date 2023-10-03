@@ -9,7 +9,7 @@ export default function FridgeItems({ userItems, goingToExpire }) {
         {userItems.map((item) => (
           <Card
             key={item._id}
-            className=" rounded-3xl background-blur bg-white/50  border-8 border-cyan-400"
+            className=" rounded-3xl bg-white/50  border-8 border-cyan-400"
           >
             <CardHeader>
               <CardTitle className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">

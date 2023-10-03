@@ -10,6 +10,7 @@ import "./App.css";
 export default function App() {
   const [user, setUser] = useState(getUser());
 
+  
   return (
     <main className="App  ">
       {user ? (
@@ -19,7 +20,7 @@ export default function App() {
               path="/fridge"
               element={<Fridge user={user} setUser={setUser} />}
             />
-            <Route path="/fridge/new" element={<AddItemPage user={user} />} />
+            <Route path="/fridge/new" element={<AddItemPage user={user} setUser={setUser} />} />
             <Route
               path="/shoppinglist"
               element={<ShoppingListPage user={user} setUser={setUser} />}

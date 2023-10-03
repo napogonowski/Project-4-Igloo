@@ -8,7 +8,7 @@ export default function SideBar({ user, setUser }) {
     setUser(null);
   }
   return (
-    <div className="background-blur bg-white/50 rounded-3xl p-10 m-5">
+    <div className="bg-white/90 lg:bg-white/50 rounded-3xl p-10 m-5">
       <div className="space-y-4 py-4 ">
         <div className="px-3 py-2 ">
           <h2 className="scroll-m-20 text-4xl font-extrabold tracking-widest lg:text-5xl mb-10">
