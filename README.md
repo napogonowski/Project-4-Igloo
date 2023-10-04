@@ -6,8 +6,7 @@
 
 With the rising cost in living, a quick grocery trip is costing close to an arm and a leg. Forgetting what’s in your fridge is even more frustrating. Before you know it, most of the food has gone off and a lot of money has gone to waste. Igloo is a MERN-Stack application that aims to help organise your fridge, save you money and help reduce food waste. With Igloo, you can catalogue the items in your fridge and track their use-by dates to make sure you before they go bad. Once you finish your grocery items, you can move them to your shopping list for future reference when you go shopping.
 
-Say goodble to wasted food and hello to a more organised and efficent fridge. Say hello to Igloo. 
-
+Say goodbye to wasted food and hello to a more organised and efficient fridge. Say hello to Igloo.
 
 ## App Screenshots
 
@@ -47,10 +46,9 @@ Another organisation page for users to keep track of what gone off in their frid
 
 ## Getting Started
 
-Igloo is deployed at Vercel @ https://project-4-igloo.vercel.app 
+Igloo is deployed at Vercel @ https://project-4-igloo.vercel.app
 
-new users can create accounts with any valid email. 
-
+new users can create accounts with any valid email.
 
 ## Reflections
 
@@ -58,7 +56,7 @@ It feels surreal to be at the end of SEI, having started this journey 3 months a
 
 While working with React, I had moments where everything clicked and I could make progress with ease. However, these moments were shorted lived, as I also encountered a significant obstacles, most notably on Wednesday, when attempting to dynamically render form fields in my add item component (Fridge).
 
- In addition to this, i also had some difficulty with working with time (shocking i know right). Finding the solution to these probelms took siginificant time. Although the solutions were relatively straight forward in hindsight, working within React and the Inception-like layers of components often made finding answers the problems additionally complex. I often spent time at a white board, drawing tree strucutres of my components to visualise where thing needed to go. I was glad to be working with MongoDB and mongoose again and their forgiving flexibility.
+In addition to this, i also had some difficulty with working with time (shocking i know right). Finding the solution to these probelms took siginificant time. Although the solutions were relatively straight forward in hindsight, working within React and the Inception-like layers of components often made finding answers the problems additionally complex. I often spent time at a white board, drawing tree strucutres of my components to visualise where thing needed to go. I was glad to be working with MongoDB and mongoose again and their forgiving flexibility.
 
 Despite the challenges and headaches, I had a lot of fun working on this project, and I hope you enjoy it too.
 
@@ -66,19 +64,18 @@ Despite the challenges and headaches, I had a lot of fun working on this project
 
 #### Who would of thought a week would go by so fast. Although im proud of what i was able to achieve in the allotted time, there was still a few features i wish i could have implemented.
 
-#### 1. Doing more with Freezer time: 
+#### 1. Doing more with Freezer time:
 
-  My inital plans was to have alot more functionality around whether or not your items were placed in the fridge or freezer. One of these was to add 2 months to the user inputted time, to give them a better estimation of when their food will go bad.
+My inital plans was to have alot more functionality around whether or not your items were placed in the fridge or freezer. One of these was to add 2 months to the user inputted time, to give them a better estimation of when their food will go bad.
 
-#### 2. More Specific Quantities: 
+#### 2. More Specific Quantities:
 
-  Not all foods can be measured the same. If i had more time i would of liked to spend some time researching how to provide a clearer values for quantity depending on food type. Given the time for this project, it wasn't viable invest time for this model design.
+Not all foods can be measured the same. If i had more time i would of liked to spend some time researching how to provide a clearer values for quantity depending on food type. Given the time for this project, it wasn't viable invest time for this model design.
 
-#### 3. Nutrition API: 
+#### 3. Nutrition API:
 
-  One of my icebox features was to include nurtition data to the user on the food they catalogue. Unfortunately i ran out of time and was unable to achieve this.
+One of my icebox features was to include nurtition data to the user on the food they catalogue. Unfortunately i ran out of time and was unable to achieve this.
 
+#### 4. Info Page:
 
-#### 4. Info Page: 
-
-  Another icebox feature was to include a page with artciles about food preservation and storing , as well as information about how best to utilise food.
+Another icebox feature was to include a page with artciles about food preservation and storing , as well as information about how best to utilise food.
